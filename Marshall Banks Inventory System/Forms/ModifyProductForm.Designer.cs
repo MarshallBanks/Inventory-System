@@ -1,7 +1,7 @@
 ﻿
 namespace Marshall_Banks_Inventory_System
 {
-    partial class Form5
+    partial class ModifyProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -255,7 +255,7 @@ namespace Marshall_Banks_Inventory_System
             this.label1.TabIndex = 69;
             this.label1.Text = "Modify Product";
             // 
-            // Form5
+            // ModifyProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,7 +284,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form5";
+            this.Name = "ModifyProductForm";
             this.Text = "Product";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

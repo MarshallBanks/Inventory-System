@@ -1,7 +1,7 @@
 ﻿
 namespace Marshall_Banks_Inventory_System
 {
-    partial class AddPartScreen
+    partial class ModifyPartForm
     {
         /// <summary>
         /// Required designer variable.
@@ -214,7 +214,7 @@ namespace Marshall_Banks_Inventory_System
             this.textBox5.Size = new System.Drawing.Size(69, 20);
             this.textBox5.TabIndex = 21;
             // 
-            // AddPartScreen
+            // ModifyPartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -239,7 +239,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "AddPartScreen";
+            this.Name = "ModifyPartForm";
             this.Text = "Part";
             this.ResumeLayout(false);
             this.PerformLayout();

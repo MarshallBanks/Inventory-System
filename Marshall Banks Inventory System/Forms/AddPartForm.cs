@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Marshall_Banks_Inventory_System
 {
-    public partial class Form3 : Form
+    public partial class AddPartForm : Form
     {
-        public Form3()
+        public AddPartForm()
         {
             InitializeComponent();
         }
