@@ -16,5 +16,33 @@ namespace Marshall_Banks_Inventory_System
         {
             InitializeComponent();
         }
+
+
+
+        private void AddPartButton_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            new AddPartForm().Show();
+            
+        }
+
+        private void ModifyPartButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ModifyPartForm().Show();
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddProductForm().Show(); 
+        }
+
+        private void ModifyProductsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ModifyProductForm().Show();
+        }
     }
 }

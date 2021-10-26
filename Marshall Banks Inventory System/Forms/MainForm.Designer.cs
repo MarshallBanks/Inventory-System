@@ -33,14 +33,14 @@ namespace Marshall_Banks_Inventory_System
             this.partsSearchBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.partsGridViewLabel = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddPartButton = new System.Windows.Forms.Button();
+            this.ModifyPartButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.ModifyProductsButton = new System.Windows.Forms.Button();
+            this.AddProductButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
@@ -87,23 +87,25 @@ namespace Marshall_Banks_Inventory_System
             this.partsGridViewLabel.TabIndex = 5;
             this.partsGridViewLabel.Text = "Parts";
             // 
-            // button3
+            // AddPartButton
             // 
-            this.button3.Location = new System.Drawing.Point(365, 359);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddPartButton.Location = new System.Drawing.Point(365, 359);
+            this.AddPartButton.Name = "AddPartButton";
+            this.AddPartButton.Size = new System.Drawing.Size(75, 33);
+            this.AddPartButton.TabIndex = 8;
+            this.AddPartButton.Text = "Add";
+            this.AddPartButton.UseVisualStyleBackColor = true;
+            this.AddPartButton.Click += new System.EventHandler(this.AddPartButton_Click);
             // 
-            // button4
+            // ModifyPartButton
             // 
-            this.button4.Location = new System.Drawing.Point(446, 359);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 33);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Modify";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ModifyPartButton.Location = new System.Drawing.Point(446, 359);
+            this.ModifyPartButton.Name = "ModifyPartButton";
+            this.ModifyPartButton.Size = new System.Drawing.Size(75, 33);
+            this.ModifyPartButton.TabIndex = 9;
+            this.ModifyPartButton.Text = "Modify";
+            this.ModifyPartButton.UseVisualStyleBackColor = true;
+            this.ModifyPartButton.Click += new System.EventHandler(this.ModifyPartButton_Click);
             // 
             // button5
             // 
@@ -139,23 +141,25 @@ namespace Marshall_Banks_Inventory_System
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // ModifyProductsButton
             // 
-            this.button6.Location = new System.Drawing.Point(1080, 359);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 33);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Modify";
-            this.button6.UseVisualStyleBackColor = true;
+            this.ModifyProductsButton.Location = new System.Drawing.Point(1080, 359);
+            this.ModifyProductsButton.Name = "ModifyProductsButton";
+            this.ModifyProductsButton.Size = new System.Drawing.Size(75, 33);
+            this.ModifyProductsButton.TabIndex = 19;
+            this.ModifyProductsButton.Text = "Modify";
+            this.ModifyProductsButton.UseVisualStyleBackColor = true;
+            this.ModifyProductsButton.Click += new System.EventHandler(this.ModifyProductsButton_Click);
             // 
-            // button7
+            // AddProductButton
             // 
-            this.button7.Location = new System.Drawing.Point(999, 359);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 33);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = true;
+            this.AddProductButton.Location = new System.Drawing.Point(999, 359);
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(75, 33);
+            this.AddProductButton.TabIndex = 18;
+            this.AddProductButton.Text = "Add";
+            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // label2
             // 
@@ -202,15 +206,15 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.button9);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.ModifyProductsButton);
+            this.Controls.Add(this.AddProductButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.ModifyPartButton);
+            this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.partsGridViewLabel);
             this.Controls.Add(this.partsSearchBox);
             this.Controls.Add(this.button1);
@@ -231,14 +235,14 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox partsSearchBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label partsGridViewLabel;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddPartButton;
+        private System.Windows.Forms.Button ModifyPartButton;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button ModifyProductsButton;
+        private System.Windows.Forms.Button AddProductButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button8;
