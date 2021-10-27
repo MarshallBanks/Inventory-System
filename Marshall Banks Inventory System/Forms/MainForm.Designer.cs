@@ -36,7 +36,7 @@ namespace Marshall_Banks_Inventory_System
             this.AddPartButton = new System.Windows.Forms.Button();
             this.ModifyPartButton = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.partsDGV = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.ModifyProductsButton = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@ namespace Marshall_Banks_Inventory_System
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,13 +116,13 @@ namespace Marshall_Banks_Inventory_System
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // partsDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 253);
-            this.dataGridView1.TabIndex = 14;
+            this.partsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDGV.Location = new System.Drawing.Point(16, 100);
+            this.partsDGV.Name = "partsDGV";
+            this.partsDGV.Size = new System.Drawing.Size(586, 253);
+            this.partsDGV.TabIndex = 14;
             // 
             // dataGridView2
             // 
@@ -211,7 +211,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.partsDGV);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.ModifyPartButton);
             this.Controls.Add(this.AddPartButton);
@@ -222,7 +222,8 @@ namespace Marshall_Banks_Inventory_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Main Screen";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,7 +239,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button AddPartButton;
         private System.Windows.Forms.Button ModifyPartButton;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView partsDGV;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button ModifyProductsButton;

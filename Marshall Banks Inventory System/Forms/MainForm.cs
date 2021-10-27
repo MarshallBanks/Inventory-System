@@ -12,12 +12,17 @@ namespace Marshall_Banks_Inventory_System
 {
     public partial class MainForm : Form
     {
+        
         public MainForm()
         {
             InitializeComponent();
+            partsDGV.DataSource = Inventory
         }
 
-
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void AddPartButton_Click(object sender, EventArgs e)
         {
@@ -44,5 +49,7 @@ namespace Marshall_Banks_Inventory_System
             this.Hide();
             new ModifyProductForm().Show();
         }
+
+      
     }
 }

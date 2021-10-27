@@ -9,5 +9,11 @@ namespace Marshall_Banks_Inventory_System
     public class Inhouse : Part
     {
         public int MachineID { get; set; }
+
+        public Inhouse(int ID)
+        {
+            PartID = ID;
+
+        }
     }
 }
