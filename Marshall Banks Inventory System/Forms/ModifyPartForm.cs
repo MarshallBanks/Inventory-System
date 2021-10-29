@@ -17,5 +17,14 @@ namespace Marshall_Banks_Inventory_System
             InitializeComponent();
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

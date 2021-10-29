@@ -31,15 +31,15 @@ namespace Marshall_Banks_Inventory_System
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,14 +71,15 @@ namespace Marshall_Banks_Inventory_System
             this.textBox7.Size = new System.Drawing.Size(223, 20);
             this.textBox7.TabIndex = 90;
             // 
-            // button5
+            // searchButton
             // 
-            this.button5.Location = new System.Drawing.Point(675, 74);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 20);
-            this.button5.TabIndex = 89;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = true;
+            this.searchButton.Location = new System.Drawing.Point(675, 74);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(59, 20);
+            this.searchButton.TabIndex = 89;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // label9
             // 
@@ -98,14 +99,15 @@ namespace Marshall_Banks_Inventory_System
             this.label7.TabIndex = 87;
             this.label7.Text = "Parts Associated with this Product";
             // 
-            // button4
+            // addButton
             // 
-            this.button4.Location = new System.Drawing.Point(863, 278);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(52, 34);
-            this.button4.TabIndex = 86;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(863, 278);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(52, 34);
+            this.addButton.TabIndex = 86;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // dataGridView2
             // 
@@ -115,14 +117,15 @@ namespace Marshall_Banks_Inventory_System
             this.dataGridView2.Size = new System.Drawing.Size(586, 147);
             this.dataGridView2.TabIndex = 85;
             // 
-            // button3
+            // deleteButton
             // 
-            this.button3.Location = new System.Drawing.Point(863, 501);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 34);
-            this.button3.TabIndex = 84;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(863, 501);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(52, 34);
+            this.deleteButton.TabIndex = 84;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // textBox5
             // 
@@ -132,24 +135,26 @@ namespace Marshall_Banks_Inventory_System
             this.textBox5.Size = new System.Drawing.Size(69, 20);
             this.textBox5.TabIndex = 83;
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(863, 541);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 34);
-            this.button2.TabIndex = 82;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(863, 541);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(52, 34);
+            this.cancelButton.TabIndex = 82;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(789, 541);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 34);
-            this.button1.TabIndex = 81;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveButton.Enabled = false;
+            this.saveButton.Location = new System.Drawing.Point(789, 541);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(52, 34);
+            this.saveButton.TabIndex = 81;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label8
             // 
@@ -262,15 +267,15 @@ namespace Marshall_Banks_Inventory_System
             this.ClientSize = new System.Drawing.Size(1040, 582);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -297,15 +302,15 @@ namespace Marshall_Banks_Inventory_System
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

@@ -45,8 +45,8 @@ namespace Marshall_Banks_Inventory_System
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -189,23 +189,25 @@ namespace Marshall_Banks_Inventory_System
             this.label9.TabIndex = 18;
             this.label9.Text = "Machine ID";
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Location = new System.Drawing.Point(200, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 34);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveButton.Location = new System.Drawing.Point(200, 269);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(52, 34);
+            this.saveButton.TabIndex = 19;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // button2
+            // cancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(258, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 34);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(258, 269);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(52, 34);
+            this.cancelButton.TabIndex = 20;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // textBox5
             // 
@@ -220,8 +222,8 @@ namespace Marshall_Banks_Inventory_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 315);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -264,8 +266,8 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox textBox5;
     }
 }

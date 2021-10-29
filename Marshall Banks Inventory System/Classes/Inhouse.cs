@@ -10,10 +10,12 @@ namespace Marshall_Banks_Inventory_System
     {
         public int MachineID { get; set; }
 
-        public Inhouse(int ID)
+        public Inhouse(int partID, string name, decimal price, int inStock, int min, int max, int machineID) 
+            : base(partID, name, price, inStock, min, max) 
         {
-            PartID = ID;
-
+            MachineID = machineID;
         }
+
+
     }
 }

@@ -31,20 +31,20 @@ namespace Marshall_Banks_Inventory_System
         {
             this.label1 = new System.Windows.Forms.Label();
             this.partsSearchBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchPartsButton = new System.Windows.Forms.Button();
             this.partsGridViewLabel = new System.Windows.Forms.Label();
             this.AddPartButton = new System.Windows.Forms.Button();
             this.ModifyPartButton = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.deletePartButton = new System.Windows.Forms.Button();
             this.partsDGV = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deleteProductsButton = new System.Windows.Forms.Button();
             this.ModifyProductsButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.searchProductsButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -68,14 +68,15 @@ namespace Marshall_Banks_Inventory_System
             this.partsSearchBox.Size = new System.Drawing.Size(213, 32);
             this.partsSearchBox.TabIndex = 4;
             // 
-            // button1
+            // searchPartsButton
             // 
-            this.button1.Location = new System.Drawing.Point(310, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchPartsButton.Location = new System.Drawing.Point(310, 59);
+            this.searchPartsButton.Name = "searchPartsButton";
+            this.searchPartsButton.Size = new System.Drawing.Size(62, 23);
+            this.searchPartsButton.TabIndex = 3;
+            this.searchPartsButton.Text = "Search";
+            this.searchPartsButton.UseVisualStyleBackColor = true;
+            this.searchPartsButton.Click += new System.EventHandler(this.searchPartsButton_Click);
             // 
             // partsGridViewLabel
             // 
@@ -107,14 +108,15 @@ namespace Marshall_Banks_Inventory_System
             this.ModifyPartButton.UseVisualStyleBackColor = true;
             this.ModifyPartButton.Click += new System.EventHandler(this.ModifyPartButton_Click);
             // 
-            // button5
+            // deletePartButton
             // 
-            this.button5.Location = new System.Drawing.Point(527, 359);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 33);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.deletePartButton.Location = new System.Drawing.Point(527, 359);
+            this.deletePartButton.Name = "deletePartButton";
+            this.deletePartButton.Size = new System.Drawing.Size(75, 33);
+            this.deletePartButton.TabIndex = 10;
+            this.deletePartButton.Text = "Delete";
+            this.deletePartButton.UseVisualStyleBackColor = true;
+            this.deletePartButton.Click += new System.EventHandler(this.deletePartButton_Click);
             // 
             // partsDGV
             // 
@@ -132,14 +134,14 @@ namespace Marshall_Banks_Inventory_System
             this.dataGridView2.Size = new System.Drawing.Size(586, 253);
             this.dataGridView2.TabIndex = 21;
             // 
-            // button2
+            // deleteProductsButton
             // 
-            this.button2.Location = new System.Drawing.Point(1161, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteProductsButton.Location = new System.Drawing.Point(1161, 359);
+            this.deleteProductsButton.Name = "deleteProductsButton";
+            this.deleteProductsButton.Size = new System.Drawing.Size(75, 33);
+            this.deleteProductsButton.TabIndex = 20;
+            this.deleteProductsButton.Text = "Delete";
+            this.deleteProductsButton.UseVisualStyleBackColor = true;
             // 
             // ModifyProductsButton
             // 
@@ -180,49 +182,50 @@ namespace Marshall_Banks_Inventory_System
             this.textBox1.Size = new System.Drawing.Size(213, 32);
             this.textBox1.TabIndex = 16;
             // 
-            // button8
+            // searchProductsButton
             // 
-            this.button8.Location = new System.Drawing.Point(944, 59);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(62, 23);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "Search";
-            this.button8.UseVisualStyleBackColor = true;
+            this.searchProductsButton.Location = new System.Drawing.Point(944, 59);
+            this.searchProductsButton.Name = "searchProductsButton";
+            this.searchProductsButton.Size = new System.Drawing.Size(62, 23);
+            this.searchProductsButton.TabIndex = 15;
+            this.searchProductsButton.Text = "Search";
+            this.searchProductsButton.UseVisualStyleBackColor = true;
+            this.searchProductsButton.Click += new System.EventHandler(this.searchProductsButton_Click);
             // 
-            // button9
+            // exitButton
             // 
-            this.button9.Location = new System.Drawing.Point(1161, 424);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 33);
-            this.button9.TabIndex = 22;
-            this.button9.Text = "Exit";
-            this.button9.UseVisualStyleBackColor = true;
+            this.exitButton.Location = new System.Drawing.Point(1161, 424);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 33);
+            this.exitButton.TabIndex = 22;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1256, 469);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.deleteProductsButton);
             this.Controls.Add(this.ModifyProductsButton);
             this.Controls.Add(this.AddProductButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.searchProductsButton);
             this.Controls.Add(this.partsDGV);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.deletePartButton);
             this.Controls.Add(this.ModifyPartButton);
             this.Controls.Add(this.AddPartButton);
             this.Controls.Add(this.partsGridViewLabel);
             this.Controls.Add(this.partsSearchBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchPartsButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Main Screen";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -234,20 +237,20 @@ namespace Marshall_Banks_Inventory_System
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox partsSearchBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button searchPartsButton;
         private System.Windows.Forms.Label partsGridViewLabel;
         private System.Windows.Forms.Button AddPartButton;
         private System.Windows.Forms.Button ModifyPartButton;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button deletePartButton;
         private System.Windows.Forms.DataGridView partsDGV;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button deleteProductsButton;
         private System.Windows.Forms.Button ModifyProductsButton;
         private System.Windows.Forms.Button AddProductButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button searchProductsButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 
