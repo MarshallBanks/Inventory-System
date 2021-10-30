@@ -24,7 +24,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void AddPartForm_FormClosing(object sender, FormClosingEventArgs e)
