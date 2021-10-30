@@ -15,7 +15,7 @@ namespace Marshall_Banks_Inventory_System
         static void Main()
         {
             // Preloaded data for Inventory.Part<BindingList>
-            Inventory.AddPart(new Inhouse(1, "seat", 6.27M, 1, 3, 15, 16));
+            Inventory.addPart(new Inhouse(1, "seat", 6.27M, 1, 3, 15, 16));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

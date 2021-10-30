@@ -32,7 +32,7 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lastLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@ namespace Marshall_Banks_Inventory_System
             this.inventoryTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.outsourcedRadioButton = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -57,6 +57,7 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox.Name = "minTextBox";
             this.minTextBox.Size = new System.Drawing.Size(69, 20);
             this.minTextBox.TabIndex = 40;
+            this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // cancelButton
             // 
@@ -79,14 +80,14 @@ namespace Marshall_Banks_Inventory_System
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // label9
+            // lastLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(57, 230);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Machine ID";
+            this.lastLabel.AutoSize = true;
+            this.lastLabel.Location = new System.Drawing.Point(32, 230);
+            this.lastLabel.Name = "lastLabel";
+            this.lastLabel.Size = new System.Drawing.Size(62, 13);
+            this.lastLabel.TabIndex = 37;
+            this.lastLabel.Text = "Machine ID";
             // 
             // label8
             // 
@@ -149,6 +150,7 @@ namespace Marshall_Banks_Inventory_System
             this.machineIDTextBox.Name = "machineIDTextBox";
             this.machineIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.machineIDTextBox.TabIndex = 30;
+            this.machineIDTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // MaxTextBox
             // 
@@ -157,6 +159,7 @@ namespace Marshall_Banks_Inventory_System
             this.MaxTextBox.Name = "MaxTextBox";
             this.MaxTextBox.Size = new System.Drawing.Size(69, 20);
             this.MaxTextBox.TabIndex = 29;
+            this.MaxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // priceTextBox
             // 
@@ -165,6 +168,7 @@ namespace Marshall_Banks_Inventory_System
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceTextBox.TabIndex = 28;
+            this.priceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // inventoryTextBox
             // 
@@ -173,6 +177,7 @@ namespace Marshall_Banks_Inventory_System
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.inventoryTextBox.TabIndex = 27;
+            this.inventoryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // nameTextBox
             // 
@@ -181,7 +186,7 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 26;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
+            this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // textBox1
             // 
@@ -191,15 +196,16 @@ namespace Marshall_Banks_Inventory_System
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 25;
             // 
-            // radioButton2
+            // outsourcedRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(222, 9);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 17);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.Text = "Outsorced";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.AutoSize = true;
+            this.outsourcedRadioButton.Location = new System.Drawing.Point(222, 9);
+            this.outsourcedRadioButton.Name = "outsourcedRadioButton";
+            this.outsourcedRadioButton.Size = new System.Drawing.Size(80, 17);
+            this.outsourcedRadioButton.TabIndex = 24;
+            this.outsourcedRadioButton.Text = "Outsourced";
+            this.outsourcedRadioButton.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.CheckedChanged += new System.EventHandler(this.outsourcedRadioButton_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -212,6 +218,7 @@ namespace Marshall_Banks_Inventory_System
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "In-House";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label1
             // 
@@ -231,7 +238,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.minTextBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lastLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -244,7 +251,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.outsourcedRadioButton);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -261,7 +268,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox minTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lastLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -274,7 +281,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox inventoryTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton outsourcedRadioButton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
     }

@@ -29,20 +29,38 @@ namespace Marshall_Banks_Inventory_System
 
         private void AddPartForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Create reference to the open but hidden MainForm and show it
+            // instead of creating a new instance of the MainForm. 
             MainForm main = (MainForm)Application.OpenForms["MainForm"];
             main.Show();
         }
 
-        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            if (nameTextBox.Text != "")
+            // Create reference to the sender object as a TextBox so handler 
+            // can be used with all texboxes
+            TextBox textBox = (TextBox)sender;
+
+            // sets textbox background color to red if there is no text 
+            // so user knows to fill out required fields
+            if (textBox.Text != "")
             {
-                nameTextBox.BackColor = SystemColors.Control; 
+                textBox.BackColor = SystemColors.ControlLightLight; 
             }
             else
             {
-                nameTextBox.BackColor = Color.FromArgb(255, 128, 128);
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
             }
+        }
+
+        private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            lastLabel.Text = "Company Name";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            lastLabel.Text = "Machine ID";
         }
     }
 }
