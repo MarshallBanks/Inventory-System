@@ -22,7 +22,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void AddPartButton_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
             new AddPartForm().Show();
             
@@ -63,7 +63,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
