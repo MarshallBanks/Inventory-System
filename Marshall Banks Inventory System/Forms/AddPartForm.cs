@@ -32,5 +32,17 @@ namespace Marshall_Banks_Inventory_System
             MainForm main = (MainForm)Application.OpenForms["MainForm"];
             main.Show();
         }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text != "")
+            {
+                nameTextBox.BackColor = SystemColors.Control; 
+            }
+            else
+            {
+                nameTextBox.BackColor = Color.FromArgb(255, 128, 128);
+            }
+        }
     }
 }
