@@ -24,7 +24,13 @@ namespace Marshall_Banks_Inventory_System
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void ModifyPartForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            main.Show();
         }
     }
 }

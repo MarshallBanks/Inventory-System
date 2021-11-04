@@ -243,6 +243,7 @@ namespace Marshall_Banks_Inventory_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModifyPartForm";
             this.Text = "Part";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyPartForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

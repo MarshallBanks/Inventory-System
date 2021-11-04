@@ -291,6 +291,7 @@ namespace Marshall_Banks_Inventory_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModifyProductForm";
             this.Text = "Product";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyProductForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

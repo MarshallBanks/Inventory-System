@@ -29,6 +29,7 @@ namespace Marshall_Banks_Inventory_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.minTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
@@ -39,15 +40,16 @@ namespace Marshall_Banks_Inventory_System
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.machineIDTextBox = new System.Windows.Forms.TextBox();
-            this.MaxTextBox = new System.Windows.Forms.TextBox();
+            this.lastTextBox = new System.Windows.Forms.TextBox();
+            this.maxTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.inventoryTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.outsourcedRadioButton = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // minTextBox
@@ -56,7 +58,8 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox.Location = new System.Drawing.Point(245, 190);
             this.minTextBox.Name = "minTextBox";
             this.minTextBox.Size = new System.Drawing.Size(69, 20);
-            this.minTextBox.TabIndex = 40;
+            this.minTextBox.TabIndex = 30;
+            this.toolTip.SetToolTip(this.minTextBox, "Min requires a number");
             this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // cancelButton
@@ -64,7 +67,7 @@ namespace Marshall_Banks_Inventory_System
             this.cancelButton.Location = new System.Drawing.Point(262, 265);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(52, 34);
-            this.cancelButton.TabIndex = 39;
+            this.cancelButton.TabIndex = 33;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -75,7 +78,7 @@ namespace Marshall_Banks_Inventory_System
             this.saveButton.Location = new System.Drawing.Point(204, 265);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(52, 34);
-            this.saveButton.TabIndex = 38;
+            this.saveButton.TabIndex = 32;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -143,23 +146,25 @@ namespace Marshall_Banks_Inventory_System
             this.label2.TabIndex = 31;
             this.label2.Text = "ID";
             // 
-            // machineIDTextBox
+            // lastTextBox
             // 
-            this.machineIDTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.machineIDTextBox.Location = new System.Drawing.Point(125, 227);
-            this.machineIDTextBox.Name = "machineIDTextBox";
-            this.machineIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.machineIDTextBox.TabIndex = 30;
-            this.machineIDTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.lastTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lastTextBox.Location = new System.Drawing.Point(125, 227);
+            this.lastTextBox.Name = "lastTextBox";
+            this.lastTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastTextBox.TabIndex = 31;
+            this.toolTip.SetToolTip(this.lastTextBox, "MachineID requires a number");
+            this.lastTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // MaxTextBox
+            // maxTextBox
             // 
-            this.MaxTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.MaxTextBox.Location = new System.Drawing.Point(125, 190);
-            this.MaxTextBox.Name = "MaxTextBox";
-            this.MaxTextBox.Size = new System.Drawing.Size(69, 20);
-            this.MaxTextBox.TabIndex = 29;
-            this.MaxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.maxTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.maxTextBox.Location = new System.Drawing.Point(125, 190);
+            this.maxTextBox.Name = "maxTextBox";
+            this.maxTextBox.Size = new System.Drawing.Size(69, 20);
+            this.maxTextBox.TabIndex = 29;
+            this.toolTip.SetToolTip(this.maxTextBox, "Max requires a number");
+            this.maxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // priceTextBox
             // 
@@ -168,6 +173,7 @@ namespace Marshall_Banks_Inventory_System
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceTextBox.TabIndex = 28;
+            this.toolTip.SetToolTip(this.priceTextBox, "Price / Cost requires a decimal\r\n");
             this.priceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // inventoryTextBox
@@ -177,6 +183,7 @@ namespace Marshall_Banks_Inventory_System
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.inventoryTextBox.TabIndex = 27;
+            this.toolTip.SetToolTip(this.inventoryTextBox, "Inventory requires a number");
             this.inventoryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // nameTextBox
@@ -186,15 +193,17 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 26;
+            this.toolTip.SetToolTip(this.nameTextBox, "Name requires string");
             this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.nameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox_KeyPress);
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 25;
+            this.idTextBox.Location = new System.Drawing.Point(125, 48);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.TabIndex = 25;
             // 
             // outsourcedRadioButton
             // 
@@ -230,6 +239,12 @@ namespace Marshall_Banks_Inventory_System
             this.label1.TabIndex = 22;
             this.label1.Text = "Add Part";
             // 
+            // toolTip
+            // 
+            this.toolTip.AutoPopDelay = 5000;
+            this.toolTip.InitialDelay = 150;
+            this.toolTip.ReshowDelay = 100;
+            // 
             // AddPartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,12 +260,12 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.machineIDTextBox);
-            this.Controls.Add(this.MaxTextBox);
+            this.Controls.Add(this.lastTextBox);
+            this.Controls.Add(this.maxTextBox);
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.outsourcedRadioButton);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
@@ -275,14 +290,15 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox machineIDTextBox;
-        private System.Windows.Forms.TextBox MaxTextBox;
+        private System.Windows.Forms.TextBox lastTextBox;
+        private System.Windows.Forms.TextBox maxTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox inventoryTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.RadioButton outsourcedRadioButton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

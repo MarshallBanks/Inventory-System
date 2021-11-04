@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Marshall_Banks_Inventory_System
 {
     public partial class AddPartForm : Form
@@ -19,7 +20,28 @@ namespace Marshall_Banks_Inventory_System
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-
+            // Collects data from textboxes and assigned to variables
+            // last variable changes based on radio button checked
+            if (outsourcedRadioButton.Checked == true)
+            {
+                string name    = nameTextBox.Text;
+                int inventory = int.Parse(inventoryTextBox.Text);
+                decimal priceCost = decimal.Parse(priceTextBox.Text);
+                int max = int.Parse(maxTextBox.Text);
+                int min = int.Parse(minTextBox.Text);
+                string companyName = lastTextBox.Text;
+                MessageBox.Show(name + "\n" + inventory + "\n" + priceCost + "\n" + max + "\n"+ min + "\n" + companyName);
+            }
+            else
+            {
+                string name = nameTextBox.Text;
+                int inventory = int.Parse(inventoryTextBox.Text);
+                decimal priceCost = decimal.Parse(priceTextBox.Text);
+                int max = int.Parse(maxTextBox.Text);
+                int min = int.Parse(minTextBox.Text);
+                int machineId = int.Parse(lastTextBox.Text);
+                MessageBox.Show(name + "\n" + inventory + "\n" + priceCost + "\n" + max + "\n" + min + "\n" + machineId);
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -37,11 +59,24 @@ namespace Marshall_Banks_Inventory_System
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
+            // Checks that each textbox is filled before enabling the save button
+            foreach (TextBox tb in Controls.OfType<TextBox>())
+            {
+                if (string.IsNullOrEmpty(tb.Text) && tb.Name != "idTextBox") 
+                {
+                    saveButton.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    saveButton.Enabled = true;
+                }
+            }
             // Create reference to the sender object as a TextBox so handler 
             // can be used with all texboxes
             TextBox textBox = (TextBox)sender;
 
-            // sets textbox background color to red if there is no text 
+            // Sets textbox background color to red if there is no text 
             // so user knows to fill out required fields
             if (textBox.Text != "")
             {
@@ -61,6 +96,11 @@ namespace Marshall_Banks_Inventory_System
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             lastLabel.Text = "Machine ID";
+        }
+
+        private void nameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }
