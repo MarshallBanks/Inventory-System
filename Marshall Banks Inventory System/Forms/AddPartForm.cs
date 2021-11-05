@@ -30,6 +30,8 @@ namespace Marshall_Banks_Inventory_System
                 int max = int.Parse(maxTextBox.Text);
                 int min = int.Parse(minTextBox.Text);
                 string companyName = lastTextBox.Text;
+
+                Inventory.addPart(new Outsourced(1, "seat", 6.27M, 1, 3, 15, 16));
                 MessageBox.Show(name + "\n" + inventory + "\n" + priceCost + "\n" + max + "\n"+ min + "\n" + companyName);
             }
             else
@@ -100,7 +102,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void nameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (T
         }
     }
 }
