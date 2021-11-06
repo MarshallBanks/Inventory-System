@@ -19,7 +19,6 @@ namespace Marshall_Banks_Inventory_System
             partsDGV.DataSource = Inventory.PartList;
         }
 
-
         private void AddPartButton_Click(object sender, EventArgs e)
         {
 

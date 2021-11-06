@@ -242,7 +242,6 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button AddPartButton;
         private System.Windows.Forms.Button ModifyPartButton;
         private System.Windows.Forms.Button deletePartButton;
-        private System.Windows.Forms.DataGridView partsDGV;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button deleteProductsButton;
         private System.Windows.Forms.Button ModifyProductsButton;
@@ -251,6 +250,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button searchProductsButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.DataGridView partsDGV;
     }
 }
 

@@ -24,6 +24,7 @@ namespace Marshall_Banks_Inventory_System
             // last variable changes based on radio button checked
             if (outsourcedRadioButton.Checked == true)
             {
+                int partID = 1; // Need to fix
                 string name    = nameTextBox.Text;
                 int inventory = int.Parse(inventoryTextBox.Text);
                 decimal priceCost = decimal.Parse(priceTextBox.Text);
@@ -31,7 +32,8 @@ namespace Marshall_Banks_Inventory_System
                 int min = int.Parse(minTextBox.Text);
                 string companyName = lastTextBox.Text;
 
-                Inventory.addPart(new Outsourced(1, "seat", 6.27M, 1, 3, 15, 16));
+                Inventory.addPart(new Outsourced(partID, name, priceCost, inventory, min, max, companyName));
+                //MainForm.updateGrid();
                 MessageBox.Show(name + "\n" + inventory + "\n" + priceCost + "\n" + max + "\n"+ min + "\n" + companyName);
             }
             else
@@ -102,7 +104,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void nameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (T
+           // if (T
         }
     }
 }

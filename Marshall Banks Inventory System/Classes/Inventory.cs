@@ -17,5 +17,9 @@ namespace Marshall_Banks_Inventory_System
         {
             PartList.Add(partObject);
         }
+        public static void addPart(Outsourced partObject)
+        {
+            PartList.Add(partObject);
+        }
     }
 }
