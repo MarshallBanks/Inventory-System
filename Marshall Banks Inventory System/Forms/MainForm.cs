@@ -29,8 +29,16 @@ namespace Marshall_Banks_Inventory_System
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new ModifyPartForm().Show();
+            if(!partsDGV.CurrentRow.Selected)
+            {
+                MessageBox.Show("Please select the part you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.Hide();
+                new ModifyPartForm().Show();
+            }
+            
         }
 
         private void AddProductButton_Click(object sender, EventArgs e)
@@ -63,6 +71,23 @@ namespace Marshall_Banks_Inventory_System
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        // for testing and debugging during development
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void partsDGV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // clears selection so the first row is not selected when the form loads
+            partsDGV.ClearSelection();
+        }
+
+        private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(partsDGV.CurrentRow.Cells["PartID"].Value + " was clicked");
         }
     }
 }
