@@ -195,7 +195,6 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox.TabIndex = 26;
             this.toolTip.SetToolTip(this.nameTextBox, "Name requires string");
             this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.nameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox_KeyPress);
             // 
             // idTextBox
             // 
@@ -247,6 +246,7 @@ namespace Marshall_Banks_Inventory_System
             // 
             // AddPartForm
             // 
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 315);

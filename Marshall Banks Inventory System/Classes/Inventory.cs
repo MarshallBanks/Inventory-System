@@ -10,16 +10,15 @@ namespace Marshall_Banks_Inventory_System
 {
     public static class Inventory
     {
-        //public static BindingList<Product> Product {get; set;}
-        //public static BindingList<Part> Part { get; set; } // ask mark kinkead why this fails?
-        public static BindingList<Product> ProductList = new BindingList<Product>();
 
+        // ask mark kinkead why this fails? / how it should be written for get and set
+        //public static BindingList<Product> Product {get; set;}
+        //public static BindingList<Part> Part { get; set; } 
+
+        public static BindingList<Product> ProductList = new BindingList<Product>();
         public static BindingList<Part> PartList = new BindingList<Part>();
-        public static void addPart(Inhouse partObject)
-        {
-            PartList.Add(partObject);
-        }
-        public static void addPart(Outsourced partObject)
+  
+        public static void addPart(Part partObject)
         {
             PartList.Add(partObject);
         }

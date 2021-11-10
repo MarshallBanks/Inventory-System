@@ -21,10 +21,8 @@ namespace Marshall_Banks_Inventory_System
 
         private void AddPartButton_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             new AddPartForm().Show();
-            
         }
 
         private void ModifyPartButton_Click(object sender, EventArgs e)
@@ -38,6 +36,12 @@ namespace Marshall_Banks_Inventory_System
                 this.Hide();
                 new ModifyPartForm().Show();
             }
+            // How to get the current index/how to get the current object
+            /*Part P = partsDGV.CurrentRow.DataBoundItem as Part;
+
+            int Index = partsDGV.CurrentCell.RowIndex;
+
+            MessageBox.Show(P.ToString() + " at row index " + Index);*/
             
         }
 

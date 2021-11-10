@@ -15,6 +15,7 @@ namespace Marshall_Banks_Inventory_System
         public ModifyPartForm()
         {
             InitializeComponent();
+            Part P = MainForm.partsDGV.CurrentRow.DataBoundItem as Part
         }
 
         private void saveButton_Click(object sender, EventArgs e)
