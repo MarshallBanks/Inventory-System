@@ -270,8 +270,8 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button searchProductsButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.DataGridView partsDGV;
         private System.Windows.Forms.Button testButton;
+        public System.Windows.Forms.DataGridView partsDGV;
     }
 }
 

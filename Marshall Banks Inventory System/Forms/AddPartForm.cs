@@ -22,7 +22,7 @@ namespace Marshall_Banks_Inventory_System
         {
             // Collects data from textboxes and assigns them to variables
             // last variable changes based on radio button checked
-            if (outsourcedRadioButton.Checked == true)
+            if (outSourcedRadioButton.Checked == true)
             {
                 int partID = 1; // Need to fix
                 string name    = nameTextBox.Text;

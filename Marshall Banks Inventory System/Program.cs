@@ -19,7 +19,7 @@ namespace Marshall_Banks_Inventory_System
             Inventory.addPart(new Inhouse(2, "pedal", 6.27M, 1, 3, 15, 16));
             Inventory.addPart(new Inhouse(3, "horn", 6.27M, 1, 3, 15, 16));
             Inventory.addPart(new Inhouse(4, "wheel", 6.27M, 1, 3, 15, 16));
-            Inventory.addPart(new Inhouse(5, "handlebar", 6.27M, 1, 3, 15, 16));
+            Inventory.addPart(new Outsourced(5, "handlebar", 6.27M, 1, 3, 15, "Redwing"));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -30,24 +30,24 @@ namespace Marshall_Banks_Inventory_System
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.inHouseRadioButton = new System.Windows.Forms.RadioButton();
+            this.outsourcedRadioButton = new System.Windows.Forms.RadioButton();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.inventoryTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.maxTextBox = new System.Windows.Forms.TextBox();
+            this.lastTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.minTextBox = new System.Windows.Forms.TextBox();
+            this.lastLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,71 +60,73 @@ namespace Marshall_Banks_Inventory_System
             this.label1.TabIndex = 0;
             this.label1.Text = "Modify Part";
             // 
-            // radioButton1
+            // inHouseRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(122, 13);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "In-House";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.inHouseRadioButton.AutoSize = true;
+            this.inHouseRadioButton.Checked = true;
+            this.inHouseRadioButton.Location = new System.Drawing.Point(122, 13);
+            this.inHouseRadioButton.Name = "inHouseRadioButton";
+            this.inHouseRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.inHouseRadioButton.TabIndex = 1;
+            this.inHouseRadioButton.TabStop = true;
+            this.inHouseRadioButton.Text = "In-House";
+            this.inHouseRadioButton.UseVisualStyleBackColor = true;
+            this.inHouseRadioButton.CheckedChanged += new System.EventHandler(this.inHouseRadioButton_CheckedChanged);
             // 
-            // radioButton2
+            // outsourcedRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(218, 13);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Outsorced";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.AutoSize = true;
+            this.outsourcedRadioButton.Location = new System.Drawing.Point(218, 13);
+            this.outsourcedRadioButton.Name = "outsourcedRadioButton";
+            this.outsourcedRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.outsourcedRadioButton.TabIndex = 2;
+            this.outsourcedRadioButton.TabStop = true;
+            this.outsourcedRadioButton.Text = "Outsorced";
+            this.outsourcedRadioButton.UseVisualStyleBackColor = true;
+            this.outsourcedRadioButton.CheckedChanged += new System.EventHandler(this.outsourcedRadioButton_CheckedChanged);
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.idTextBox.Location = new System.Drawing.Point(121, 52);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // nameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(121, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.nameTextBox.Location = new System.Drawing.Point(121, 82);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 4;
             // 
-            // textBox3
+            // inventoryTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(121, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.inventoryTextBox.Location = new System.Drawing.Point(121, 119);
+            this.inventoryTextBox.Name = "inventoryTextBox";
+            this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.inventoryTextBox.TabIndex = 5;
             // 
-            // textBox4
+            // priceTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(121, 154);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 6;
+            this.priceTextBox.Location = new System.Drawing.Point(121, 154);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.priceTextBox.TabIndex = 6;
             // 
-            // textBox6
+            // maxTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(121, 194);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(69, 20);
-            this.textBox6.TabIndex = 8;
+            this.maxTextBox.Location = new System.Drawing.Point(121, 194);
+            this.maxTextBox.Name = "maxTextBox";
+            this.maxTextBox.Size = new System.Drawing.Size(69, 20);
+            this.maxTextBox.TabIndex = 8;
             // 
-            // textBox8
+            // lastTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(121, 231);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 10;
+            this.lastTextBox.Location = new System.Drawing.Point(121, 231);
+            this.lastTextBox.Name = "lastTextBox";
+            this.lastTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastTextBox.TabIndex = 10;
             // 
             // label2
             // 
@@ -180,15 +182,6 @@ namespace Marshall_Banks_Inventory_System
             this.label8.TabIndex = 17;
             this.label8.Text = "Min";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(53, 234);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Machine ID";
-            // 
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(200, 269);
@@ -209,36 +202,45 @@ namespace Marshall_Banks_Inventory_System
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // textBox5
+            // minTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(241, 194);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(69, 20);
-            this.textBox5.TabIndex = 21;
+            this.minTextBox.Location = new System.Drawing.Point(241, 194);
+            this.minTextBox.Name = "minTextBox";
+            this.minTextBox.Size = new System.Drawing.Size(69, 20);
+            this.minTextBox.TabIndex = 21;
+            // 
+            // lastLabel
+            // 
+            this.lastLabel.AutoSize = true;
+            this.lastLabel.Location = new System.Drawing.Point(24, 234);
+            this.lastLabel.Name = "lastLabel";
+            this.lastLabel.Size = new System.Drawing.Size(62, 13);
+            this.lastLabel.TabIndex = 38;
+            this.lastLabel.Text = "Machine ID";
             // 
             // ModifyPartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 315);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.lastLabel);
+            this.Controls.Add(this.minTextBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.lastTextBox);
+            this.Controls.Add(this.maxTextBox);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(this.inventoryTextBox);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.idTextBox);
+            this.Controls.Add(this.outsourcedRadioButton);
+            this.Controls.Add(this.inHouseRadioButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModifyPartForm";
@@ -252,23 +254,23 @@ namespace Marshall_Banks_Inventory_System
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.RadioButton inHouseRadioButton;
+        private System.Windows.Forms.RadioButton outsourcedRadioButton;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox inventoryTextBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox maxTextBox;
+        private System.Windows.Forms.TextBox lastTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox minTextBox;
+        private System.Windows.Forms.Label lastLabel;
     }
 }
