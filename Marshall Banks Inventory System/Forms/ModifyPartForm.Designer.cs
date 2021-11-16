@@ -31,7 +31,7 @@ namespace Marshall_Banks_Inventory_System
         {
             this.label1 = new System.Windows.Forms.Label();
             this.inHouseRadioButton = new System.Windows.Forms.RadioButton();
-            this.outsourcedRadioButton = new System.Windows.Forms.RadioButton();
+            this.outSourcedRadioButton = new System.Windows.Forms.RadioButton();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.inventoryTextBox = new System.Windows.Forms.TextBox();
@@ -73,17 +73,17 @@ namespace Marshall_Banks_Inventory_System
             this.inHouseRadioButton.UseVisualStyleBackColor = true;
             this.inHouseRadioButton.CheckedChanged += new System.EventHandler(this.inHouseRadioButton_CheckedChanged);
             // 
-            // outsourcedRadioButton
+            // outSourcedRadioButton
             // 
-            this.outsourcedRadioButton.AutoSize = true;
-            this.outsourcedRadioButton.Location = new System.Drawing.Point(218, 13);
-            this.outsourcedRadioButton.Name = "outsourcedRadioButton";
-            this.outsourcedRadioButton.Size = new System.Drawing.Size(74, 17);
-            this.outsourcedRadioButton.TabIndex = 2;
-            this.outsourcedRadioButton.TabStop = true;
-            this.outsourcedRadioButton.Text = "Outsorced";
-            this.outsourcedRadioButton.UseVisualStyleBackColor = true;
-            this.outsourcedRadioButton.CheckedChanged += new System.EventHandler(this.outsourcedRadioButton_CheckedChanged);
+            this.outSourcedRadioButton.AutoSize = true;
+            this.outSourcedRadioButton.Location = new System.Drawing.Point(218, 13);
+            this.outSourcedRadioButton.Name = "outSourcedRadioButton";
+            this.outSourcedRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.outSourcedRadioButton.TabIndex = 2;
+            this.outSourcedRadioButton.TabStop = true;
+            this.outSourcedRadioButton.Text = "Outsorced";
+            this.outSourcedRadioButton.UseVisualStyleBackColor = true;
+            this.outSourcedRadioButton.CheckedChanged += new System.EventHandler(this.outsourcedRadioButton_CheckedChanged);
             // 
             // idTextBox
             // 
@@ -239,7 +239,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.inventoryTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.idTextBox);
-            this.Controls.Add(this.outsourcedRadioButton);
+            this.Controls.Add(this.outSourcedRadioButton);
             this.Controls.Add(this.inHouseRadioButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -255,7 +255,7 @@ namespace Marshall_Banks_Inventory_System
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton inHouseRadioButton;
-        private System.Windows.Forms.RadioButton outsourcedRadioButton;
+        private System.Windows.Forms.RadioButton outSourcedRadioButton;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox inventoryTextBox;

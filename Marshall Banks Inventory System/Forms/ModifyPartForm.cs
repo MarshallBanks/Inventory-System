@@ -30,7 +30,7 @@ namespace Marshall_Banks_Inventory_System
                 // Create reference to the selected part as an outSourced type
                 // to get class specific variable CompanyName
                 Outsourced partToModify = (Outsourced)selectedPart;
-                outsourcedRadioButton.Checked = true;
+                outSourcedRadioButton.Checked = true;
 
                 // Populate CompanyName TextBox
                 lastTextBox.Text = partToModify.CompanyName.ToString();
@@ -57,7 +57,30 @@ namespace Marshall_Banks_Inventory_System
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (outSourcedRadioButton.Checked == true)
+            {
+                int partID = int.Parse(idTextBox.Text); 
+                string name = nameTextBox.Text;
+                int inventory = int.Parse(inventoryTextBox.Text);
+                decimal priceCost = decimal.Parse(priceTextBox.Text);
+                int max = int.Parse(maxTextBox.Text);
+                int min = int.Parse(minTextBox.Text);
+                string companyName = lastTextBox.Text;
 
+                Inventory.updatePart(new Outsourced(partID, name, priceCost, inventory, min, max, companyName));
+            }
+            else // 
+            {
+                int partID = int.Parse(idTextBox.Text); // Need to fix
+                string name = nameTextBox.Text;
+                int inventory = int.Parse(inventoryTextBox.Text);
+                decimal priceCost = decimal.Parse(priceTextBox.Text);
+                int max = int.Parse(maxTextBox.Text);
+                int min = int.Parse(minTextBox.Text);
+                int machineId = int.Parse(lastTextBox.Text);
+                Inventory.updatePart(new Inhouse(partID, name, priceCost, inventory, min, max, machineId));
+            }
+            this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

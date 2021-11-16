@@ -59,7 +59,14 @@ namespace Marshall_Banks_Inventory_System
 
         private void deletePartButton_Click(object sender, EventArgs e)
         {
+            if (partsDGV.CurrentRow == null)
+            {
+                MessageBox.Show("Please select the part you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
+            Part selectedPart = partsDGV.CurrentRow.DataBoundItem as Part;
+
+            Inventory.PartList.Remove(selectedPart);
         }
 
         private void searchProductsButton_Click(object sender, EventArgs e)
