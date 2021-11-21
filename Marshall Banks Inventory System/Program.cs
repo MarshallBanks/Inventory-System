@@ -22,7 +22,7 @@ namespace Marshall_Banks_Inventory_System
             Inventory.addPart(new Outsourced(5, "handlebar", 6.27M, 1, 3, 15, "Redwing"));
 
             // Preloaded data for Inventory.Product<BindingList>
-            Inventory.addProduct(new Product(Product))
+            Inventory.addProduct(new Product(1, "Bicycle", 3.45M, 50, 10, 30));
 
 
 

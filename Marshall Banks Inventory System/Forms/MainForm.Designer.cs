@@ -138,13 +138,16 @@ namespace Marshall_Banks_Inventory_System
             // 
             this.productsDGV.AllowUserToAddRows = false;
             this.productsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.productsDGV.Location = new System.Drawing.Point(650, 100);
             this.productsDGV.MultiSelect = false;
             this.productsDGV.Name = "productsDGV";
             this.productsDGV.ReadOnly = true;
+            this.productsDGV.RowHeadersVisible = false;
             this.productsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productsDGV.Size = new System.Drawing.Size(586, 253);
             this.productsDGV.TabIndex = 21;
+            this.productsDGV.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.productsDGV_DataBindingComplete);
             // 
             // deleteProductsButton
             // 
@@ -264,7 +267,6 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button AddPartButton;
         private System.Windows.Forms.Button ModifyPartButton;
         private System.Windows.Forms.Button deletePartButton;
-        private System.Windows.Forms.DataGridView productsDGV;
         private System.Windows.Forms.Button deleteProductsButton;
         private System.Windows.Forms.Button ModifyProductsButton;
         private System.Windows.Forms.Button AddProductButton;
@@ -274,6 +276,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button testButton;
         public System.Windows.Forms.DataGridView partsDGV;
+        public System.Windows.Forms.DataGridView productsDGV;
     }
 }
 

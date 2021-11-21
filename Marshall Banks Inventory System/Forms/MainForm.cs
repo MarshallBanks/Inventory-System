@@ -17,6 +17,7 @@ namespace Marshall_Banks_Inventory_System
         {
             InitializeComponent();
             partsDGV.DataSource = Inventory.PartList;
+            productsDGV.DataSource = Inventory.ProductList;
         }
 
         private void AddPartButton_Click(object sender, EventArgs e)
@@ -153,6 +154,11 @@ namespace Marshall_Banks_Inventory_System
         private void partsDGV_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
            partsDGV.Rows[0].Selected = false;
+        }
+
+        private void productsDGV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            productsDGV.Rows[0].Selected = false;
         }
     }
 }
