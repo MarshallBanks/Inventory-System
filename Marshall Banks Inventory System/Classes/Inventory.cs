@@ -46,6 +46,11 @@ namespace Marshall_Banks_Inventory_System
             }
         }
 
+        public static void addProduct(Product productObject)
+        {
+            productObject.ProductID = ProductList.Count + 1;
+            ProductList.Add(productObject);
+        }
         
     }
 }

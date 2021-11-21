@@ -21,6 +21,11 @@ namespace Marshall_Banks_Inventory_System
             Inventory.addPart(new Inhouse(4, "wheel", 6.27M, 1, 3, 15, 16));
             Inventory.addPart(new Outsourced(5, "handlebar", 6.27M, 1, 3, 15, "Redwing"));
 
+            // Preloaded data for Inventory.Product<BindingList>
+            Inventory.addProduct(new Product(Product))
+
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

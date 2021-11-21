@@ -16,5 +16,16 @@ namespace Marshall_Banks_Inventory_System
         public int InStock { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
+
+        // constructor
+        public Product(int productID, string name , decimal price, int inStock, int min, int max)
+        {
+            ProductID = productID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
     }
 }
