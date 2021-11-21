@@ -20,7 +20,8 @@ namespace Marshall_Banks_Inventory_System
 
         public static void addPart(Part partObject)
         {
-     
+            
+           
             partObject.PartID = PartList.Count + 1;
             PartList.Add(partObject);
 

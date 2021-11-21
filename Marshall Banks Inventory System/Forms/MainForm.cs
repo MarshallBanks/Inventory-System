@@ -101,7 +101,29 @@ namespace Marshall_Banks_Inventory_System
 
         private void searchPartsButton_Click(object sender, EventArgs e)
         {
+            BindingList<Part> TempSearchList = new BindingList<Part>();
+            bool searchTxtFound = false;
+            if (partsSearchBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.PartList.Count; ++i)
+                {
+                    if (Inventory.PartList[i].Name.ToLower().Contains(partsSearchBox.Text.ToLower()))
+                    {
+                        TempSearchList.Add(Inventory.PartList[i]);
+                        searchTxtFound = true;
+                    }
+                }
+                if(searchTxtFound)
+                {
+                    partsDGV.DataSource = TempSearchList;
+                }
 
+            }
+            if(!searchTxtFound)
+            {
+                MessageBox.Show($"\"{partsSearchBox.Text}\" not found.");
+                partsDGV.DataSource = Inventory.PartList;
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -130,7 +152,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void partsDGV_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            partsDGV.Rows[0].Selected = false;
+           partsDGV.Rows[0].Selected = false;
         }
     }
 }

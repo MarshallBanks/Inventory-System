@@ -64,9 +64,8 @@ namespace Marshall_Banks_Inventory_System
             // 
             this.partsSearchBox.CausesValidation = false;
             this.partsSearchBox.Location = new System.Drawing.Point(389, 59);
-            this.partsSearchBox.Multiline = true;
             this.partsSearchBox.Name = "partsSearchBox";
-            this.partsSearchBox.Size = new System.Drawing.Size(213, 32);
+            this.partsSearchBox.Size = new System.Drawing.Size(213, 20);
             this.partsSearchBox.TabIndex = 4;
             // 
             // searchPartsButton
@@ -190,9 +189,8 @@ namespace Marshall_Banks_Inventory_System
             // 
             this.textBox1.CausesValidation = false;
             this.textBox1.Location = new System.Drawing.Point(1023, 59);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 32);
+            this.textBox1.Size = new System.Drawing.Size(213, 20);
             this.textBox1.TabIndex = 16;
             // 
             // searchProductsButton
