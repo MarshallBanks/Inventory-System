@@ -59,14 +59,39 @@ namespace Marshall_Banks_Inventory_System
 
         private void deletePartButton_Click(object sender, EventArgs e)
         {
-            if (partsDGV.CurrentRow == null)
+
+            try
             {
-                MessageBox.Show("Please select the part you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (!partsDGV.CurrentRow.Selected)
+                {
+                    MessageBox.Show("Please select the part you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    Part selectedPart = partsDGV.CurrentRow.DataBoundItem as Part;
+
+                    DialogResult answer = MessageBox.Show($"Are you sure you wish to delete {selectedPart.Name} from the list?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (answer != DialogResult.Yes)
+                    {
+                        return;
+                    }
+                    
+                    Inventory.deletePart(selectedPart);
+
+                    /*if (Inventory.deletePart(selectedPart))
+                    {
+                        MessageBox.Show($"{selectedPart.Name} was deleted");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{selectedPart.Name} failed to delete");
+                    }*/
+                }
             }
-
-            Part selectedPart = partsDGV.CurrentRow.DataBoundItem as Part;
-
-            Inventory.PartList.Remove(selectedPart);
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Please select the part you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void searchProductsButton_Click(object sender, EventArgs e)
@@ -87,18 +112,25 @@ namespace Marshall_Banks_Inventory_System
         // for testing and debugging during development
         private void testButton_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void partsDGV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // clears selection so the first row is not selected when the form loads
-            partsDGV.ClearSelection();
+            Part selectedPart = partsDGV.CurrentRow.DataBoundItem as Part;
+            if (selectedPart is Outsourced)
+            {
+                MessageBox.Show("Outsourced!");
+            }
+            else if (selectedPart is Inhouse)
+            {
+                MessageBox.Show("Inhouse");
+            }
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(partsDGV.CurrentRow.Cells["PartID"].Value + " was clicked");
+            //MessageBox.Show(partsDGV.CurrentRow.Cells["PartID"].Value + " was clicked");
+        }
+
+        private void partsDGV_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            partsDGV.Rows[0].Selected = false;
         }
     }
 }

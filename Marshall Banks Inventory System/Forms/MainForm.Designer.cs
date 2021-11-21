@@ -121,19 +121,23 @@ namespace Marshall_Banks_Inventory_System
             // 
             // partsDGV
             // 
+            this.partsDGV.AllowUserToAddRows = false;
             this.partsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.partsDGV.Location = new System.Drawing.Point(16, 100);
             this.partsDGV.MultiSelect = false;
             this.partsDGV.Name = "partsDGV";
             this.partsDGV.ReadOnly = true;
+            this.partsDGV.RowHeadersVisible = false;
             this.partsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.partsDGV.Size = new System.Drawing.Size(586, 253);
             this.partsDGV.TabIndex = 14;
             this.partsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.partsDGV_CellClick);
-            this.partsDGV.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.partsDGV_DataBindingComplete);
+            this.partsDGV.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.partsDGV_DataBindingComplete_1);
             // 
             // productsDGV
             // 
+            this.productsDGV.AllowUserToAddRows = false;
             this.productsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsDGV.Location = new System.Drawing.Point(650, 100);
             this.productsDGV.MultiSelect = false;

@@ -20,8 +20,10 @@ namespace Marshall_Banks_Inventory_System
 
         public static void addPart(Part partObject)
         {
+     
             partObject.PartID = PartList.Count + 1;
             PartList.Add(partObject);
+
         }
 
         public static void updatePart(Part partObject)
@@ -30,9 +32,17 @@ namespace Marshall_Banks_Inventory_System
             PartList.Insert((partObject.PartID - 1), partObject);
         }
 
-        public static bool deletePart(int partID)
+        public static bool deletePart(Part partObject)
         {
-            return true;
+            try
+            {
+               PartList.Remove(partObject);
+               return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         
