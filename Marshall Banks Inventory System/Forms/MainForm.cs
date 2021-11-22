@@ -97,7 +97,29 @@ namespace Marshall_Banks_Inventory_System
 
         private void searchProductsButton_Click(object sender, EventArgs e)
         {
+            BindingList<Product> TempSearchList = new BindingList<Product>();
+            bool searchTxtFound = false;
+            if (productsSearchBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.ProductList.Count; ++i)
+                {
+                    if (Inventory.ProductList[i].Name.ToLower().Contains(productsSearchBox.Text.ToLower()))
+                    {
+                        TempSearchList.Add(Inventory.ProductList[i]);
+                        searchTxtFound = true;
+                    }
+                }
+                if (searchTxtFound)
+                {
+                    productsDGV.DataSource = TempSearchList;
+                }
 
+            }
+            if (!searchTxtFound)
+            {
+                MessageBox.Show($"\"{productsSearchBox.Text}\" not found.");
+                productsDGV.DataSource = Inventory.ProductList;
+            }
         }
 
         private void searchPartsButton_Click(object sender, EventArgs e)
@@ -135,15 +157,13 @@ namespace Marshall_Banks_Inventory_System
         // for testing and debugging during development
         private void testButton_Click(object sender, EventArgs e)
         {
-            Part selectedPart = partsDGV.CurrentRow.DataBoundItem as Part;
-            if (selectedPart is Outsourced)
+            foreach (Product product in Inventory.ProductList)
             {
-                MessageBox.Show("Outsourced!");
+                int index = Inventory.ProductList.IndexOf(product);
+                MessageBox.Show($"{product.Name}'s index is {index}");
             }
-            else if (selectedPart is Inhouse)
-            {
-                MessageBox.Show("Inhouse");
-            }
+            
+        
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)

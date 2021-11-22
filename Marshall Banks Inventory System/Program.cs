@@ -23,6 +23,8 @@ namespace Marshall_Banks_Inventory_System
 
             // Preloaded data for Inventory.Product<BindingList>
             Inventory.addProduct(new Product(1, "Bicycle", 3.45M, 50, 10, 30));
+            Inventory.addProduct(new Product(2, "Tricycle", 5.66m, 20, 5, 25));
+            Inventory.addProduct(new Product(3, "Scooter", 4.77m, 40, 10, 20));
 
 
 

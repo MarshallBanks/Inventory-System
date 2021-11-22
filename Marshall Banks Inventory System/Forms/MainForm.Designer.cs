@@ -42,7 +42,7 @@ namespace Marshall_Banks_Inventory_System
             this.ModifyProductsButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.productsSearchBox = new System.Windows.Forms.TextBox();
             this.searchProductsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.testButton = new System.Windows.Forms.Button();
@@ -188,13 +188,13 @@ namespace Marshall_Banks_Inventory_System
             this.label2.TabIndex = 17;
             this.label2.Text = "Products";
             // 
-            // textBox1
+            // productsSearchBox
             // 
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Location = new System.Drawing.Point(1023, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
-            this.textBox1.TabIndex = 16;
+            this.productsSearchBox.CausesValidation = false;
+            this.productsSearchBox.Location = new System.Drawing.Point(1023, 59);
+            this.productsSearchBox.Name = "productsSearchBox";
+            this.productsSearchBox.Size = new System.Drawing.Size(213, 20);
+            this.productsSearchBox.TabIndex = 16;
             // 
             // searchProductsButton
             // 
@@ -238,7 +238,7 @@ namespace Marshall_Banks_Inventory_System
             this.Controls.Add(this.ModifyProductsButton);
             this.Controls.Add(this.AddProductButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.productsSearchBox);
             this.Controls.Add(this.searchProductsButton);
             this.Controls.Add(this.partsDGV);
             this.Controls.Add(this.deletePartButton);
@@ -271,7 +271,7 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button ModifyProductsButton;
         private System.Windows.Forms.Button AddProductButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox productsSearchBox;
         private System.Windows.Forms.Button searchProductsButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button testButton;
