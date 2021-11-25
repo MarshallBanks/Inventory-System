@@ -94,6 +94,8 @@ namespace Marshall_Banks_Inventory_System
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
             }
+            
+            //if (textBox.Name == )
         }
 
         private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
