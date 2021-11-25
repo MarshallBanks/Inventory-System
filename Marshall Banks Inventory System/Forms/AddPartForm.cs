@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -64,21 +65,6 @@ namespace Marshall_Banks_Inventory_System
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            
-            
-            // Checks that each textbox is filled before enabling the save button
-            foreach (TextBox tb in Controls.OfType<TextBox>())
-            {
-                if (string.IsNullOrEmpty(tb.Text) && tb.Name != "idTextBox") 
-                {
-                    saveButton.Enabled = false;
-                    break;
-                }
-                else
-                {
-                    saveButton.Enabled = true;
-                }
-            }
 
             // Create reference to the sender object as a TextBox so handler 
             // can be used with all texboxes
@@ -94,8 +80,33 @@ namespace Marshall_Banks_Inventory_System
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
             }
-            
-            //if (textBox.Name == )
+
+            bool v = Regex.IsMatch(textBox.Text, @"^\d+$");
+            if ((textBox.Name == "nameTextBox") && v)
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+                saveButton.Enabled = false;
+            }
+            else if((textBox.Name == "inventoryTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+                saveButton.Enabled = false;
+            }
+
+            // Checks that each textbox is valid (not red) before enabling the save button
+            foreach (TextBox tb in Controls.OfType<TextBox>())
+            {
+                if (tb.BackColor == Color.FromArgb(255, 128, 128))
+                {
+                    saveButton.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    saveButton.Enabled = true;
+                }
+            }
+
         }
 
         private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
