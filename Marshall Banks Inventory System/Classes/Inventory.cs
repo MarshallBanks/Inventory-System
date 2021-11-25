@@ -17,20 +17,20 @@ namespace Marshall_Banks_Inventory_System
 
         public static BindingList<Product> ProductList = new BindingList<Product>();
         public static BindingList<Part> PartList = new BindingList<Part>();
+        public static int HistoricalPartCount = 0;
 
-        public static void addPart(Part partObject)
+        public static void addPart(Part newPart)
         {
-            
-           
-            partObject.PartID = PartList.Count + 1;
-            PartList.Add(partObject);
+            HistoricalPartCount += 1;
+            newPart.PartID = HistoricalPartCount;
 
+            PartList.Add(newPart);
         }
 
-        public static void updatePart(Part partObject)
+        public static void updatePart(Part modifiedPart)
         {
-            PartList.RemoveAt(partObject.PartID - 1);
-            PartList.Insert((partObject.PartID - 1), partObject);
+            PartList.RemoveAt(modifiedPart.PartID - 1);
+            PartList.Insert((modifiedPart.PartID - 1), modifiedPart);
         }
 
         public static bool deletePart(Part partObject)

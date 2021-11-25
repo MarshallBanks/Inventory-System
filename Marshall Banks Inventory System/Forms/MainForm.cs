@@ -162,6 +162,8 @@ namespace Marshall_Banks_Inventory_System
                 int index = Inventory.ProductList.IndexOf(product);
                 MessageBox.Show($"{product.Name}'s index is {index}");
             }
+
+            MessageBox.Show($"{Inventory.HistoricalPartCount}");
             
         
         }

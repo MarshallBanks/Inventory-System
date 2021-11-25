@@ -64,6 +64,8 @@ namespace Marshall_Banks_Inventory_System
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
+            
+            
             // Checks that each textbox is filled before enabling the save button
             foreach (TextBox tb in Controls.OfType<TextBox>())
             {
@@ -77,6 +79,7 @@ namespace Marshall_Banks_Inventory_System
                     saveButton.Enabled = true;
                 }
             }
+
             // Create reference to the sender object as a TextBox so handler 
             // can be used with all texboxes
             TextBox textBox = (TextBox)sender;
