@@ -81,17 +81,32 @@ namespace Marshall_Banks_Inventory_System
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
             }
 
-            bool v = Regex.IsMatch(textBox.Text, @"^\d+$");
-            if ((textBox.Name == "nameTextBox") && v)
+            if((textBox.Name == "inventoryTextBox") && !textBox.Text.All(char.IsDigit))
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
                 saveButton.Enabled = false;
             }
-            else if((textBox.Name == "inventoryTextBox") && !textBox.Text.All(char.IsDigit))
+            if ((textBox.Name == "maxTextBox")  && !textBox.Text.All(char.IsDigit))
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
                 saveButton.Enabled = false;
             }
+            if ((textBox.Name == "minTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+                saveButton.Enabled = false;
+            }
+            if ((textBox.Name == "lastTextBox") && !textBox.Text.All(char.IsDigit) && lastLabel.Text == "Machine ID")
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+                saveButton.Enabled = true;
+            }
+            if ((textBox.Name == "lastTextBox") && textBox.Text.All(char.IsDigit) && lastLabel.Text == "Company Name")
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+                saveButton.Enabled = true;
+            }
+
 
             // Checks that each textbox is valid (not red) before enabling the save button
             foreach (TextBox tb in Controls.OfType<TextBox>())
