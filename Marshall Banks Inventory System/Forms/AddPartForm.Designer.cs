@@ -181,7 +181,7 @@ namespace Marshall_Banks_Inventory_System
             // priceTextBox
             // 
             this.priceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.priceTextBox.Location = new System.Drawing.Point(167, 185);
+            this.priceTextBox.Location = new System.Drawing.Point(168, 188);
             this.priceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(132, 22);

@@ -84,27 +84,35 @@ namespace Marshall_Banks_Inventory_System
             if((textBox.Name == "inventoryTextBox") && !textBox.Text.All(char.IsDigit))
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
-                saveButton.Enabled = false;
             }
+
             if ((textBox.Name == "maxTextBox")  && !textBox.Text.All(char.IsDigit))
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
-                saveButton.Enabled = false;
             }
+
             if ((textBox.Name == "minTextBox") && !textBox.Text.All(char.IsDigit))
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
-                saveButton.Enabled = false;
             }
+
+            if ((textBox.Name == "priceTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                bool isDecimal = decimal.TryParse(textBox.Name, out decimal result);
+                if (isDecimal)
+                {
+                    textBox.BackColor = Color.FromArgb(255, 128, 128);
+                }
+            }
+
             if ((textBox.Name == "lastTextBox") && !textBox.Text.All(char.IsDigit) && lastLabel.Text == "Machine ID")
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
-                saveButton.Enabled = true;
             }
+
             if ((textBox.Name == "lastTextBox") && textBox.Text.All(char.IsDigit) && lastLabel.Text == "Company Name")
             {
                 textBox.BackColor = Color.FromArgb(255, 128, 128);
-                saveButton.Enabled = true;
             }
 
 
@@ -124,14 +132,21 @@ namespace Marshall_Banks_Inventory_System
 
         }
 
+
+        // Changes the label of the last text box to MachineID for In-House and Company Name for Outsourced. 
+        // Clears the text that way the user cannot save a letter as a machineID by putting in a number
+        // and switching to In-House 
         private void outsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            lastLabel.Text = "Company Name";
+           lastLabel.Text = "Company Name";
+           lastTextBox.Text = "";
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             lastLabel.Text = "Machine ID";
+            lastTextBox.Text = "";
         }
 
     }
