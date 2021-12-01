@@ -37,7 +37,7 @@ namespace Marshall_Banks_Inventory_System
                 {
                     maxTextBox.BackColor = Color.FromArgb(255, 128, 128);
                     minTextBox.BackColor = Color.FromArgb(255, 128, 128);
-                    MessageBox.Show("The Minimum cannot be more than Maximum.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The Minimum cannot be more than the Maximum.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -52,15 +52,16 @@ namespace Marshall_Banks_Inventory_System
                 int max = int.Parse(maxTextBox.Text);
                 int min = int.Parse(minTextBox.Text);
                 int machineId = int.Parse(lastTextBox.Text);
-                Inventory.addPart(new Inhouse(partID, name, priceCost, inventory, min, max, machineId));
 
                 if (min > max)
                 {
                     maxTextBox.BackColor = Color.FromArgb(255, 128, 128);
                     minTextBox.BackColor = Color.FromArgb(255, 128, 128);
-                    MessageBox.Show("The Minimum cannot be more than Maximum.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The Minimum cannot be more than the Maximum.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
+
+                Inventory.addPart(new Inhouse(partID, name, priceCost, inventory, min, max, machineId));                
             }
 
             this.Close();
@@ -73,8 +74,6 @@ namespace Marshall_Banks_Inventory_System
 
         private void AddPartForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Create reference to the open but hidden MainForm and show it
-            // instead of creating a new instance of the MainForm. 
             MainForm main = (MainForm)Application.OpenForms["MainForm"];
             main.Show();
         }

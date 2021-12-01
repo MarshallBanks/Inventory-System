@@ -99,6 +99,7 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 4;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // inventoryTextBox
             // 
@@ -106,6 +107,7 @@ namespace Marshall_Banks_Inventory_System
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
             this.inventoryTextBox.TabIndex = 5;
+            this.inventoryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // priceTextBox
             // 
@@ -113,6 +115,7 @@ namespace Marshall_Banks_Inventory_System
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
             this.priceTextBox.TabIndex = 6;
+            this.priceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // maxTextBox
             // 
@@ -120,6 +123,7 @@ namespace Marshall_Banks_Inventory_System
             this.maxTextBox.Name = "maxTextBox";
             this.maxTextBox.Size = new System.Drawing.Size(69, 20);
             this.maxTextBox.TabIndex = 8;
+            this.maxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lastTextBox
             // 
@@ -127,6 +131,7 @@ namespace Marshall_Banks_Inventory_System
             this.lastTextBox.Name = "lastTextBox";
             this.lastTextBox.Size = new System.Drawing.Size(100, 20);
             this.lastTextBox.TabIndex = 10;
+            this.lastTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label2
             // 
@@ -208,6 +213,7 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox.Name = "minTextBox";
             this.minTextBox.Size = new System.Drawing.Size(69, 20);
             this.minTextBox.TabIndex = 21;
+            this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lastLabel
             // 

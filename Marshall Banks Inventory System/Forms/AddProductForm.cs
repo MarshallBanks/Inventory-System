@@ -47,5 +47,63 @@ namespace Marshall_Banks_Inventory_System
             MainForm main = (MainForm)Application.OpenForms["MainForm"];
             main.Show();
         }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            // Create reference to the sender object as a TextBox so handler 
+            // can be used with all texboxes
+            TextBox textBox = (TextBox)sender;
+
+            // Sets textbox background color to red if there is no text 
+            // so user knows to fill out required fields
+            if (textBox.Text != "")
+            {
+                textBox.BackColor = SystemColors.ControlLightLight;
+            }
+            else
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+            }
+
+            if ((textBox.Name == "inventoryTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+            }
+
+            if ((textBox.Name == "maxTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+            }
+
+            if ((textBox.Name == "minTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                textBox.BackColor = Color.FromArgb(255, 128, 128);
+            }
+
+            if ((textBox.Name == "priceTextBox") && !textBox.Text.All(char.IsDigit))
+            {
+                bool isDecimal = decimal.TryParse(textBox.Name, out decimal result);
+                if (isDecimal)
+                {
+                    textBox.BackColor = Color.FromArgb(255, 128, 128);
+                }
+            }
+
+            // Checks that each textbox is valid (not red) before enabling the save button
+            foreach (TextBox tb in Controls.OfType<TextBox>())
+            {
+                if (tb.BackColor == Color.FromArgb(255, 128, 128))
+                {
+                    saveProductButton.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    saveProductButton.Enabled = true;
+                }
+            }
+
+        }
     }
 }
