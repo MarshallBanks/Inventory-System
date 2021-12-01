@@ -26,6 +26,7 @@ namespace Marshall_Banks_Inventory_System
             InStock = inStock;
             Min = min;
             Max = max;
+            AssociatedParts = new BindingList<Part>();
         }
     }
 }

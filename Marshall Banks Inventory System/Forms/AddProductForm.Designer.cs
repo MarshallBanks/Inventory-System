@@ -72,7 +72,7 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox.Location = new System.Drawing.Point(205, 351);
             this.minTextBox.Name = "minTextBox";
             this.minTextBox.Size = new System.Drawing.Size(69, 20);
-            this.minTextBox.TabIndex = 59;
+            this.minTextBox.TabIndex = 4;
             this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // cancelButton
@@ -80,7 +80,7 @@ namespace Marshall_Banks_Inventory_System
             this.cancelButton.Location = new System.Drawing.Point(863, 539);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(52, 34);
-            this.cancelButton.TabIndex = 58;
+            this.cancelButton.TabIndex = 10;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -91,7 +91,7 @@ namespace Marshall_Banks_Inventory_System
             this.saveProductButton.Location = new System.Drawing.Point(789, 539);
             this.saveProductButton.Name = "saveProductButton";
             this.saveProductButton.Size = new System.Drawing.Size(52, 34);
-            this.saveProductButton.TabIndex = 57;
+            this.saveProductButton.TabIndex = 8;
             this.saveProductButton.Text = "Save";
             this.saveProductButton.UseVisualStyleBackColor = true;
             this.saveProductButton.Click += new System.EventHandler(this.saveProductButton_Click);
@@ -156,7 +156,7 @@ namespace Marshall_Banks_Inventory_System
             this.maxTextBox.Location = new System.Drawing.Point(89, 351);
             this.maxTextBox.Name = "maxTextBox";
             this.maxTextBox.Size = new System.Drawing.Size(69, 20);
-            this.maxTextBox.TabIndex = 48;
+            this.maxTextBox.TabIndex = 3;
             this.maxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // priceTextBox
@@ -165,7 +165,7 @@ namespace Marshall_Banks_Inventory_System
             this.priceTextBox.Location = new System.Drawing.Point(124, 311);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(100, 20);
-            this.priceTextBox.TabIndex = 47;
+            this.priceTextBox.TabIndex = 2;
             this.priceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // inventoryTextBox
@@ -174,7 +174,7 @@ namespace Marshall_Banks_Inventory_System
             this.inventoryTextBox.Location = new System.Drawing.Point(124, 276);
             this.inventoryTextBox.Name = "inventoryTextBox";
             this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
-            this.inventoryTextBox.TabIndex = 46;
+            this.inventoryTextBox.TabIndex = 1;
             this.inventoryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // nameTextBox
@@ -183,7 +183,7 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox.Location = new System.Drawing.Point(124, 239);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameTextBox.TabIndex = 45;
+            this.nameTextBox.TabIndex = 0;
             this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // idTextBox
@@ -192,14 +192,14 @@ namespace Marshall_Banks_Inventory_System
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
-            this.idTextBox.TabIndex = 44;
+            this.idTextBox.TabIndex = 20;
             // 
             // deletePartButton
             // 
             this.deletePartButton.Location = new System.Drawing.Point(863, 499);
             this.deletePartButton.Name = "deletePartButton";
             this.deletePartButton.Size = new System.Drawing.Size(52, 34);
-            this.deletePartButton.TabIndex = 60;
+            this.deletePartButton.TabIndex = 9;
             this.deletePartButton.Text = "Delete";
             this.deletePartButton.UseVisualStyleBackColor = true;
             this.deletePartButton.Click += new System.EventHandler(this.deletePartButton_Click);
@@ -217,7 +217,7 @@ namespace Marshall_Banks_Inventory_System
             this.addCandidatePartButton.Location = new System.Drawing.Point(863, 276);
             this.addCandidatePartButton.Name = "addCandidatePartButton";
             this.addCandidatePartButton.Size = new System.Drawing.Size(52, 34);
-            this.addCandidatePartButton.TabIndex = 63;
+            this.addCandidatePartButton.TabIndex = 7;
             this.addCandidatePartButton.Text = "Add";
             this.addCandidatePartButton.UseVisualStyleBackColor = true;
             this.addCandidatePartButton.Click += new System.EventHandler(this.addCandidatePartButton_Click);
@@ -245,7 +245,7 @@ namespace Marshall_Banks_Inventory_System
             this.searchCandidatePartsButton.Location = new System.Drawing.Point(675, 72);
             this.searchCandidatePartsButton.Name = "searchCandidatePartsButton";
             this.searchCandidatePartsButton.Size = new System.Drawing.Size(59, 20);
-            this.searchCandidatePartsButton.TabIndex = 66;
+            this.searchCandidatePartsButton.TabIndex = 6;
             this.searchCandidatePartsButton.Text = "Search";
             this.searchCandidatePartsButton.UseVisualStyleBackColor = true;
             this.searchCandidatePartsButton.Click += new System.EventHandler(this.searchCandidatePartsButton_Click);
@@ -255,7 +255,7 @@ namespace Marshall_Banks_Inventory_System
             this.textBox7.Location = new System.Drawing.Point(740, 72);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(223, 20);
-            this.textBox7.TabIndex = 67;
+            this.textBox7.TabIndex = 5;
             // 
             // dataGridView1
             // 

@@ -39,7 +39,16 @@ namespace Marshall_Banks_Inventory_System
 
         private void saveProductButton_Click(object sender, EventArgs e)
         {
-            
+            int productID = 0; // Handled by addProduct
+            string name = nameTextBox.Text;
+            int inventory = int.Parse(inventoryTextBox.Text);
+            decimal priceCost = decimal.Parse(priceTextBox.Text);
+            int max = int.Parse(maxTextBox.Text);
+            int min = int.Parse(minTextBox.Text);
+
+            Inventory.addProduct(new Product(productID, name, priceCost, inventory, min, max));
+
+            this.Close();
         }
 
         private void AddProductForm_FormClosing(object sender, FormClosingEventArgs e)

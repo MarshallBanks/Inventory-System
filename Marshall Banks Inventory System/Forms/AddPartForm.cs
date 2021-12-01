@@ -25,7 +25,7 @@ namespace Marshall_Banks_Inventory_System
             // last variable changes based on radio button checked
             if (outSourcedRadioButton.Checked == true)
             {
-                int partID = 1; // Need to fix
+                int partID = 0; // Handled by addPart
                 string name    = nameTextBox.Text;
                 int inventory = int.Parse(inventoryTextBox.Text);
                 decimal priceCost = decimal.Parse(priceTextBox.Text);
@@ -45,7 +45,7 @@ namespace Marshall_Banks_Inventory_System
             }
             else // 
             {
-                int partID = 1; // Need to fix
+                int partID = 0; // Handled by addPart
                 string name = nameTextBox.Text;
                 int inventory = int.Parse(inventoryTextBox.Text);
                 decimal priceCost = decimal.Parse(priceTextBox.Text);
