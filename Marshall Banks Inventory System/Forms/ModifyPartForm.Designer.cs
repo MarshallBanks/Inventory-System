@@ -122,7 +122,7 @@ namespace Marshall_Banks_Inventory_System
             this.maxTextBox.Location = new System.Drawing.Point(121, 194);
             this.maxTextBox.Name = "maxTextBox";
             this.maxTextBox.Size = new System.Drawing.Size(69, 20);
-            this.maxTextBox.TabIndex = 8;
+            this.maxTextBox.TabIndex = 7;
             this.maxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lastTextBox
@@ -130,7 +130,7 @@ namespace Marshall_Banks_Inventory_System
             this.lastTextBox.Location = new System.Drawing.Point(121, 231);
             this.lastTextBox.Name = "lastTextBox";
             this.lastTextBox.Size = new System.Drawing.Size(100, 20);
-            this.lastTextBox.TabIndex = 10;
+            this.lastTextBox.TabIndex = 9;
             this.lastTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label2
@@ -192,7 +192,7 @@ namespace Marshall_Banks_Inventory_System
             this.saveButton.Location = new System.Drawing.Point(200, 269);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(52, 34);
-            this.saveButton.TabIndex = 19;
+            this.saveButton.TabIndex = 10;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -202,7 +202,7 @@ namespace Marshall_Banks_Inventory_System
             this.cancelButton.Location = new System.Drawing.Point(258, 269);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(52, 34);
-            this.cancelButton.TabIndex = 20;
+            this.cancelButton.TabIndex = 11;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -212,7 +212,7 @@ namespace Marshall_Banks_Inventory_System
             this.minTextBox.Location = new System.Drawing.Point(241, 194);
             this.minTextBox.Name = "minTextBox";
             this.minTextBox.Size = new System.Drawing.Size(69, 20);
-            this.minTextBox.TabIndex = 21;
+            this.minTextBox.TabIndex = 8;
             this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // lastLabel
