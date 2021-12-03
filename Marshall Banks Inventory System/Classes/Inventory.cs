@@ -13,6 +13,7 @@ namespace Marshall_Banks_Inventory_System
         public static BindingList<Product> ProductList = new BindingList<Product>();
         public static BindingList<Part> PartList = new BindingList<Part>();
         public static int HistoricalPartCount = 0;
+        public static int HistoricalProductCount = 0;
 
         public static void addPart(Part newPart)
         {
@@ -41,11 +42,26 @@ namespace Marshall_Banks_Inventory_System
             }
         }
 
-        public static void addProduct(Product productObject)
+        public static void addProduct(Product newProduct)
         {
-            productObject.ProductID = ProductList.Count + 1;
-            ProductList.Add(productObject);
+            HistoricalPartCount += 1;
+            newProduct.ProductID = HistoricalPartCount;
+
+            ProductList.Add(newProduct);
         }
-        
+
+        public static bool deleteProduct(Product productObject)
+        {
+            try
+            {
+                ProductList.Remove(productObject);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

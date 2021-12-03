@@ -78,15 +78,6 @@ namespace Marshall_Banks_Inventory_System
                     }
                     
                     Inventory.deletePart(selectedPart);
-
-                    /*if (Inventory.deletePart(selectedPart))
-                    {
-                        MessageBox.Show($"{selectedPart.Name} was deleted");
-                    }
-                    else
-                    {
-                        MessageBox.Show($"{selectedPart.Name} failed to delete");
-                    }*/
                 }
             }
             catch (System.NullReferenceException)
@@ -181,6 +172,33 @@ namespace Marshall_Banks_Inventory_System
         private void productsDGV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             productsDGV.Rows[0].Selected = false;
+        }
+
+        private void deleteProductsButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!productsDGV.CurrentRow.Selected)
+                {
+                    MessageBox.Show("Please select the product you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    Product selectedProduct = productsDGV.CurrentRow.DataBoundItem as Product;
+
+                    DialogResult answer = MessageBox.Show($"Are you sure you wish to delete {selectedProduct.Name} from the list?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (answer != DialogResult.Yes)
+                    {
+                        return;
+                    }
+
+                    Inventory.deleteProduct(selectedProduct);
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Please select the product you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
