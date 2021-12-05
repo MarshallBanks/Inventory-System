@@ -19,8 +19,8 @@ namespace Marshall_Banks_Inventory_System
             // create reference to MainForm to access the selected Product.
             MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
 
-            // Create a reference to the currently selected row and 
-            // corresponding item in the data source
+            // Create a reference to the currently selected row in ProductsDGV 
+            // in the main form
             Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
 
             // Populate TextBoxes
@@ -45,6 +45,18 @@ namespace Marshall_Banks_Inventory_System
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            // Create reference to currently selected part in available parts DGV
+            Part partToAdd = allPartsDGV.CurrentRow.DataBoundItem as Part;
+
+            // create reference to MainForm to access the selected Product.
+            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+
+            // Create a reference to the currently selected row in ProductsDGV 
+            // in the main form
+            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
+
+            selectedProduct.AssociatedParts.Add(partToAdd);
+
 
         }
 
