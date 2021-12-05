@@ -29,54 +29,59 @@ namespace Marshall_Banks_Inventory_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.allPartsDGV = new System.Windows.Forms.DataGridView();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.associatedPartsDGV = new System.Windows.Forms.DataGridView();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.minTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.modProdSaveButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.maxTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.inventoryTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allPartsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // allPartsDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(377, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 147);
-            this.dataGridView1.TabIndex = 91;
+            this.allPartsDGV.AllowUserToAddRows = false;
+            this.allPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allPartsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.allPartsDGV.Location = new System.Drawing.Point(377, 110);
+            this.allPartsDGV.MultiSelect = false;
+            this.allPartsDGV.Name = "allPartsDGV";
+            this.allPartsDGV.ReadOnly = true;
+            this.allPartsDGV.RowHeadersVisible = false;
+            this.allPartsDGV.Size = new System.Drawing.Size(586, 147);
+            this.allPartsDGV.TabIndex = 91;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(740, 74);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(223, 20);
-            this.textBox7.TabIndex = 90;
+            this.textBox7.TabIndex = 9;
             // 
             // searchButton
             // 
             this.searchButton.Location = new System.Drawing.Point(675, 74);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(59, 20);
-            this.searchButton.TabIndex = 89;
+            this.searchButton.TabIndex = 10;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -104,57 +109,63 @@ namespace Marshall_Banks_Inventory_System
             this.addButton.Location = new System.Drawing.Point(863, 278);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(52, 34);
-            this.addButton.TabIndex = 86;
+            this.addButton.TabIndex = 11;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // dataGridView2
+            // associatedPartsDGV
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(377, 329);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(586, 147);
-            this.dataGridView2.TabIndex = 85;
+            this.associatedPartsDGV.AllowUserToAddRows = false;
+            this.associatedPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.associatedPartsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.associatedPartsDGV.Location = new System.Drawing.Point(377, 335);
+            this.associatedPartsDGV.MultiSelect = false;
+            this.associatedPartsDGV.Name = "associatedPartsDGV";
+            this.associatedPartsDGV.ReadOnly = true;
+            this.associatedPartsDGV.RowHeadersVisible = false;
+            this.associatedPartsDGV.Size = new System.Drawing.Size(586, 147);
+            this.associatedPartsDGV.TabIndex = 85;
             // 
             // deleteButton
             // 
             this.deleteButton.Location = new System.Drawing.Point(863, 501);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(52, 34);
-            this.deleteButton.TabIndex = 84;
+            this.deleteButton.TabIndex = 12;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // textBox5
+            // minTextBox
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.Location = new System.Drawing.Point(205, 353);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(69, 20);
-            this.textBox5.TabIndex = 83;
+            this.minTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.minTextBox.Location = new System.Drawing.Point(205, 353);
+            this.minTextBox.Name = "minTextBox";
+            this.minTextBox.Size = new System.Drawing.Size(69, 20);
+            this.minTextBox.TabIndex = 7;
+            this.minTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // cancelButton
             // 
             this.cancelButton.Location = new System.Drawing.Point(863, 541);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(52, 34);
-            this.cancelButton.TabIndex = 82;
+            this.cancelButton.TabIndex = 13;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // saveButton
+            // modProdSaveButton
             // 
-            this.saveButton.Enabled = false;
-            this.saveButton.Location = new System.Drawing.Point(789, 541);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(52, 34);
-            this.saveButton.TabIndex = 81;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.modProdSaveButton.Enabled = false;
+            this.modProdSaveButton.Location = new System.Drawing.Point(789, 541);
+            this.modProdSaveButton.Name = "modProdSaveButton";
+            this.modProdSaveButton.Size = new System.Drawing.Size(52, 34);
+            this.modProdSaveButton.TabIndex = 8;
+            this.modProdSaveButton.Text = "Save";
+            this.modProdSaveButton.UseVisualStyleBackColor = true;
+            this.modProdSaveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label8
             // 
@@ -210,45 +221,49 @@ namespace Marshall_Banks_Inventory_System
             this.label2.TabIndex = 75;
             this.label2.Text = "ID";
             // 
-            // textBox6
+            // maxTextBox
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.Location = new System.Drawing.Point(89, 353);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(69, 20);
-            this.textBox6.TabIndex = 74;
+            this.maxTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.maxTextBox.Location = new System.Drawing.Point(89, 353);
+            this.maxTextBox.Name = "maxTextBox";
+            this.maxTextBox.Size = new System.Drawing.Size(69, 20);
+            this.maxTextBox.TabIndex = 6;
+            this.maxTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // textBox4
+            // priceTextBox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(124, 313);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 73;
+            this.priceTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.priceTextBox.Location = new System.Drawing.Point(124, 313);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.priceTextBox.TabIndex = 5;
+            this.priceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // textBox3
+            // inventoryTextBox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(124, 278);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 72;
+            this.inventoryTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.inventoryTextBox.Location = new System.Drawing.Point(124, 278);
+            this.inventoryTextBox.Name = "inventoryTextBox";
+            this.inventoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.inventoryTextBox.TabIndex = 4;
+            this.inventoryTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // textBox2
+            // nameTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(124, 241);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 71;
+            this.nameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.nameTextBox.Location = new System.Drawing.Point(124, 241);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 2;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 70;
+            this.idTextBox.Location = new System.Drawing.Point(124, 211);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.ReadOnly = true;
+            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.TabIndex = 400;
             // 
             // label1
             // 
@@ -265,35 +280,35 @@ namespace Marshall_Banks_Inventory_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 582);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.allPartsDGV);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.associatedPartsDGV);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.minTextBox);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.modProdSaveButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.maxTextBox);
+            this.Controls.Add(this.priceTextBox);
+            this.Controls.Add(this.inventoryTextBox);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModifyProductForm";
             this.Text = "Product";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModifyProductForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allPartsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,28 +316,28 @@ namespace Marshall_Banks_Inventory_System
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView allPartsDGV;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView associatedPartsDGV;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox minTextBox;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button modProdSaveButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox maxTextBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox inventoryTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label label1;
     }
 }

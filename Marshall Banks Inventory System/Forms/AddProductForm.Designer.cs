@@ -45,15 +45,15 @@ namespace Marshall_Banks_Inventory_System
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.deletePartButton = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.associatedPartsDGV = new System.Windows.Forms.DataGridView();
             this.addCandidatePartButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.searchCandidatePartsButton = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.allPartsDGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allPartsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -204,13 +204,18 @@ namespace Marshall_Banks_Inventory_System
             this.deletePartButton.UseVisualStyleBackColor = true;
             this.deletePartButton.Click += new System.EventHandler(this.deletePartButton_Click);
             // 
-            // dataGridView2
+            // associatedPartsDGV
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(377, 327);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(586, 147);
-            this.dataGridView2.TabIndex = 62;
+            this.associatedPartsDGV.AllowUserToAddRows = false;
+            this.associatedPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.associatedPartsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.associatedPartsDGV.Location = new System.Drawing.Point(377, 327);
+            this.associatedPartsDGV.MultiSelect = false;
+            this.associatedPartsDGV.Name = "associatedPartsDGV";
+            this.associatedPartsDGV.ReadOnly = true;
+            this.associatedPartsDGV.RowHeadersVisible = false;
+            this.associatedPartsDGV.Size = new System.Drawing.Size(586, 147);
+            this.associatedPartsDGV.TabIndex = 62;
             // 
             // addCandidatePartButton
             // 
@@ -257,26 +262,31 @@ namespace Marshall_Banks_Inventory_System
             this.textBox7.Size = new System.Drawing.Size(223, 20);
             this.textBox7.TabIndex = 5;
             // 
-            // dataGridView1
+            // allPartsDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(377, 108);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 147);
-            this.dataGridView1.TabIndex = 68;
+            this.allPartsDGV.AllowUserToAddRows = false;
+            this.allPartsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allPartsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.allPartsDGV.Location = new System.Drawing.Point(377, 108);
+            this.allPartsDGV.MultiSelect = false;
+            this.allPartsDGV.Name = "allPartsDGV";
+            this.allPartsDGV.ReadOnly = true;
+            this.allPartsDGV.RowHeadersVisible = false;
+            this.allPartsDGV.Size = new System.Drawing.Size(586, 147);
+            this.allPartsDGV.TabIndex = 68;
             // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 582);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.allPartsDGV);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.searchCandidatePartsButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.addCandidatePartButton);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.associatedPartsDGV);
             this.Controls.Add(this.deletePartButton);
             this.Controls.Add(this.minTextBox);
             this.Controls.Add(this.cancelButton);
@@ -297,8 +307,8 @@ namespace Marshall_Banks_Inventory_System
             this.Name = "AddProductForm";
             this.Text = "Product";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddProductForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allPartsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,12 +332,12 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Button deletePartButton;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView associatedPartsDGV;
         private System.Windows.Forms.Button addCandidatePartButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button searchCandidatePartsButton;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView allPartsDGV;
     }
 }

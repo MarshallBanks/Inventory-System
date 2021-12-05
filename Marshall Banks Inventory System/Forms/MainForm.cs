@@ -54,8 +54,15 @@ namespace Marshall_Banks_Inventory_System
 
         private void ModifyProductsButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new ModifyProductForm().Show();
+            if (!productsDGV.CurrentRow.Selected)
+            {
+                MessageBox.Show("Please select the product you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.Hide();
+                new ModifyProductForm().Show();
+            }
         }
 
         private void deletePartButton_Click(object sender, EventArgs e)

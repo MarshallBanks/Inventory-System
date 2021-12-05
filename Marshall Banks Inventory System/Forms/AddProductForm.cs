@@ -15,6 +15,19 @@ namespace Marshall_Banks_Inventory_System
         public AddProductForm()
         {
             InitializeComponent();
+
+            // create reference to MainForm to access the selected Product.
+            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+
+            // Create a reference to the currently selected row and 
+            // corresponding item in the data source
+            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
+
+            // Populate associated parts list with data
+            associatedPartsDGV.DataSource = selectedProduct.AssociatedParts;
+
+            // Populate All Candidate Parts list with data
+            allPartsDGV.DataSource = Inventory.PartList;
         }
 
         private void searchCandidatePartsButton_Click(object sender, EventArgs e)
@@ -45,6 +58,14 @@ namespace Marshall_Banks_Inventory_System
             decimal priceCost = decimal.Parse(priceTextBox.Text);
             int max = int.Parse(maxTextBox.Text);
             int min = int.Parse(minTextBox.Text);
+
+            if (min > max)
+            {
+                maxTextBox.BackColor = Color.FromArgb(255, 128, 128);
+                minTextBox.BackColor = Color.FromArgb(255, 128, 128);
+                MessageBox.Show("The Minimum cannot be more than the Maximum.", "Invalid Data Entry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             Inventory.addProduct(new Product(productID, name, priceCost, inventory, min, max));
 

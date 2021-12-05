@@ -44,10 +44,16 @@ namespace Marshall_Banks_Inventory_System
 
         public static void addProduct(Product newProduct)
         {
-            HistoricalPartCount += 1;
-            newProduct.ProductID = HistoricalPartCount;
+            HistoricalProductCount += 1;
+            newProduct.ProductID = HistoricalProductCount;
 
             ProductList.Add(newProduct);
+        }
+
+        public static void updateProduct(Product modifiedProduct)
+        {
+            ProductList.RemoveAt(modifiedProduct.ProductID - 1);
+            ProductList.Insert((modifiedProduct.ProductID - 1), modifiedProduct);
         }
 
         public static bool deleteProduct(Product productObject)
