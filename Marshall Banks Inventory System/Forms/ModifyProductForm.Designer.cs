@@ -66,6 +66,7 @@ namespace Marshall_Banks_Inventory_System
             this.allPartsDGV.Name = "allPartsDGV";
             this.allPartsDGV.ReadOnly = true;
             this.allPartsDGV.RowHeadersVisible = false;
+            this.allPartsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.allPartsDGV.Size = new System.Drawing.Size(586, 147);
             this.allPartsDGV.TabIndex = 91;
             // 
@@ -124,6 +125,7 @@ namespace Marshall_Banks_Inventory_System
             this.associatedPartsDGV.Name = "associatedPartsDGV";
             this.associatedPartsDGV.ReadOnly = true;
             this.associatedPartsDGV.RowHeadersVisible = false;
+            this.associatedPartsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.associatedPartsDGV.Size = new System.Drawing.Size(586, 147);
             this.associatedPartsDGV.TabIndex = 85;
             // 
