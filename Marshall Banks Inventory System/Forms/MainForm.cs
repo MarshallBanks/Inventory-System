@@ -155,15 +155,12 @@ namespace Marshall_Banks_Inventory_System
         // for testing and debugging during development
         private void testButton_Click(object sender, EventArgs e)
         {
-            foreach (Product product in Inventory.ProductList)
-            {
-                int index = Inventory.ProductList.IndexOf(product);
-                MessageBox.Show($"{product.Name}'s index is {index}");
-            }
 
-            MessageBox.Show($"{Inventory.HistoricalPartCount}");
-            
-        
+            Product selectedProduct = productsDGV.CurrentRow.DataBoundItem as Product;
+            MessageBox.Show($"{selectedProduct.AssociatedParts.ElementAt(0).Name}");
+
+
+
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)

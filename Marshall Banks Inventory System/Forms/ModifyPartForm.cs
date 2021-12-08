@@ -75,7 +75,11 @@ namespace Marshall_Banks_Inventory_System
                     return;
                 }
 
-                Inventory.updatePart(new Outsourced(partID, name, priceCost, inventory, min, max, companyName));
+                //Get the current row Index to pass to updatePart
+                MainForm main = (MainForm)Application.OpenForms["MainForm"];
+                int partIndex = main.partsDGV.CurrentCell.RowIndex;
+
+                Inventory.updatePart(partIndex, new Outsourced(partID, name, priceCost, inventory, min, max, companyName));
             }
             else // 
             {
@@ -95,7 +99,11 @@ namespace Marshall_Banks_Inventory_System
                     return;
                 }
 
-                Inventory.updatePart(new Inhouse(partID, name, priceCost, inventory, min, max, machineId));
+                //Get the current row Index to pass to updatePart
+                MainForm main = (MainForm)Application.OpenForms["MainForm"];
+                int partIndex = main.partsDGV.CurrentCell.RowIndex;
+
+                Inventory.updatePart(partIndex, new Inhouse(partID, name, priceCost, inventory, min, max, machineId));
             }
             this.Close();
         }

@@ -26,6 +26,9 @@ namespace Marshall_Banks_Inventory_System
             Inventory.addProduct(new Product(2, "Tricycle", 5.66m, 20, 5, 25));
             Inventory.addProduct(new Product(3, "Scooter", 4.77m, 40, 10, 20));
 
+            Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(0));
+            Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(1));
+
 
 
             Application.EnableVisualStyles();

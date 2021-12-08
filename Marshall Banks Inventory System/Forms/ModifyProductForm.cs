@@ -31,11 +31,18 @@ namespace Marshall_Banks_Inventory_System
             maxTextBox.Text = selectedProduct.Max.ToString();
             minTextBox.Text = selectedProduct.Min.ToString();
 
-            // Populate associated parts list with data
-            associatedPartsDGV.DataSource = selectedProduct.AssociatedParts;
+            //
+            //BindingList
 
             // Populate All Candidate Parts list with data
             allPartsDGV.DataSource = Inventory.PartList;
+
+            // Create copy of the product's associated parts to manipulate when using 
+            // add button. Parts are actually updated using the Save button.
+            List<Part> associatedPartsCopy = selectedProduct.AssociatedParts.ToList();
+
+            // Populate associated parts list with data
+            associatedPartsDGV.DataSource = associatedPartsCopy;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -45,8 +52,15 @@ namespace Marshall_Banks_Inventory_System
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedPart = allPartsDGV.CurrentRow;
+
+            associatedPartsDGV.Rows.Add(selectedPart);
+
+            /*
             // Create reference to currently selected part in available parts DGV
             Part partToAdd = allPartsDGV.CurrentRow.DataBoundItem as Part;
+
+
 
             // create reference to MainForm to access the selected Product.
             MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
@@ -55,9 +69,7 @@ namespace Marshall_Banks_Inventory_System
             // in the main form
             Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
 
-            selectedProduct.AssociatedParts.Add(partToAdd);
-
-
+            selectedProduct.AssociatedParts.Add(partToAdd);*/
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -87,7 +99,11 @@ namespace Marshall_Banks_Inventory_System
                 return;
             }
 
-            Inventory.updateProduct(new Product(productID, name, priceCost, inventory, min, max));
+            // Get the current row index to pass to updateProduct
+            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            int productIndex = main.productsDGV.CurrentCell.RowIndex;
+
+            Inventory.updateProduct(productIndex, new Product(productID, name, priceCost, inventory, min, max));
 
             this.Close();
         }

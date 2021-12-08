@@ -23,10 +23,10 @@ namespace Marshall_Banks_Inventory_System
             PartList.Add(newPart);
         }
 
-        public static void updatePart(Part modifiedPart)
+        public static void updatePart(int partIndex, Part modifiedPart)
         {
-            PartList.RemoveAt(modifiedPart.PartID - 1);
-            PartList.Insert((modifiedPart.PartID - 1), modifiedPart);
+            PartList.RemoveAt(partIndex);
+            PartList.Insert(partIndex, modifiedPart);
         }
 
         public static bool deletePart(Part partObject)
@@ -50,10 +50,10 @@ namespace Marshall_Banks_Inventory_System
             ProductList.Add(newProduct);
         }
 
-        public static void updateProduct(Product modifiedProduct)
+        public static void updateProduct(int productIndex, Product modifiedProduct)
         {
-            ProductList.RemoveAt(modifiedProduct.ProductID - 1);
-            ProductList.Insert((modifiedProduct.ProductID - 1), modifiedProduct);
+            ProductList.RemoveAt(productIndex);
+            ProductList.Insert(productIndex, modifiedProduct);
         }
 
         public static bool deleteProduct(Product productObject)
