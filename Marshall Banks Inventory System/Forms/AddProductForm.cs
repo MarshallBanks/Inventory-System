@@ -12,27 +12,51 @@ namespace Marshall_Banks_Inventory_System
 {
     public partial class AddProductForm : Form
     {
+        // create reference to MainForm to access the selected Product.
+        MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+
+        // Create a bindingList designated for the associatedPartsDGV Datasource.
+        private BindingList<Part> tempAssociatedParts = new BindingList<Part>();
+
         public AddProductForm()
         {
             InitializeComponent();
 
-            // create reference to MainForm to access the selected Product.
-            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
-
-            // Create a reference to the currently selected row and 
-            // corresponding item in the data source
-            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
-
-            // Populate associated parts list with data
-            associatedPartsDGV.DataSource = selectedProduct.AssociatedParts;
-
             // Populate All Candidate Parts list with data
             allPartsDGV.DataSource = Inventory.PartList;
+
+            // Create a reference to the currently selected Product in the MainForm
+            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
+
+            // Bind temporary binding list to associated parts DGV
+            associatedPartsDGV.DataSource = tempAssociatedParts;
         }
 
-        private void searchCandidatePartsButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
+            BindingList<Part> TempSearchList = new BindingList<Part>();
+            bool searchTxtFound = false;
+            if (candidatePartsSearchBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.PartList.Count; ++i)
+                {
+                    if (Inventory.PartList[i].Name.ToLower().Contains(candidatePartsSearchBox.Text.ToLower()))
+                    {
+                        TempSearchList.Add(Inventory.PartList[i]);
+                        searchTxtFound = true;
+                    }
+                }
+                if (searchTxtFound)
+                {
+                    allPartsDGV.DataSource = TempSearchList;
+                }
 
+            }
+            if (!searchTxtFound)
+            {
+                MessageBox.Show($"\"{candidatePartsSearchBox.Text}\" not found.");
+                allPartsDGV.DataSource = Inventory.PartList;
+            }
         }
 
         private void addCandidatePartButton_Click(object sender, EventArgs e)
@@ -40,19 +64,14 @@ namespace Marshall_Banks_Inventory_System
             // Create reference to currently selected part in available parts DGV
             Part partToAdd = allPartsDGV.CurrentRow.DataBoundItem as Part;
 
-            // create reference to MainForm to access the selected Product.
-            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
-
-            // Create a reference to the currently selected row in ProductsDGV 
-            // in the main form
-            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
-
-            selectedProduct.AssociatedParts.Add(partToAdd);
+            tempAssociatedParts.Add(partToAdd);
         }
 
         private void deletePartButton_Click(object sender, EventArgs e)
         {
+            Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
 
+            tempAssociatedParts.Remove(partToRemove);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -77,15 +96,23 @@ namespace Marshall_Banks_Inventory_System
                 return;
             }
 
-            Inventory.addProduct(new Product(productID, name, priceCost, inventory, min, max));
+            // Create Product object using all data in the form
+            Product newProduct = new Product(productID, name, priceCost, inventory, min, max);
+
+            // Get any parts in the bottom DataGridView and add it to the new product
+            foreach (Part part in tempAssociatedParts)
+            {
+                newProduct.AssociatedParts.Add(part);
+            }
+
+            Inventory.addProduct(newProduct);
 
             this.Close();
         }
 
         private void AddProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainForm main = (MainForm)Application.OpenForms["MainForm"];
-            main.Show();
+            mainForm.Show();
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)

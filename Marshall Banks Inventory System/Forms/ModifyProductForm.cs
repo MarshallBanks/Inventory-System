@@ -15,16 +15,14 @@ namespace Marshall_Banks_Inventory_System
         // create reference to MainForm to access the selected Product.
         private MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
 
-        // Create a bindingList designated to only function as the associatedPartsDGV
-        // Datasource.
+        // Create a bindingList designated for the associatedPartsDGV Datasource.
         private BindingList<Part> tempAssociatedParts = new BindingList<Part>();
 
         public ModifyProductForm()
         {
             InitializeComponent();
 
-            // Create a reference to the currently selected row in ProductsDGV 
-            // in the main form
+            // Create a reference to the currently selected Product in the MainForm
             Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
 
             // Populate TextBoxes
@@ -49,7 +47,29 @@ namespace Marshall_Banks_Inventory_System
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            BindingList<Part> TempSearchList = new BindingList<Part>();
+            bool searchTxtFound = false;
+            if (candidatePartsSearchBox.Text != "")
+            {
+                for (int i = 0; i < Inventory.PartList.Count; ++i)
+                {
+                    if (Inventory.PartList[i].Name.ToLower().Contains(candidatePartsSearchBox.Text.ToLower()))
+                    {
+                        TempSearchList.Add(Inventory.PartList[i]);
+                        searchTxtFound = true;
+                    }
+                }
+                if (searchTxtFound)
+                {
+                    allPartsDGV.DataSource = TempSearchList;
+                }
 
+            }
+            if (!searchTxtFound)
+            {
+                MessageBox.Show($"\"{candidatePartsSearchBox.Text}\" not found.");
+                allPartsDGV.DataSource = Inventory.PartList;
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)

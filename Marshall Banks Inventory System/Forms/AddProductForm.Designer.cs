@@ -49,8 +49,8 @@ namespace Marshall_Banks_Inventory_System
             this.addCandidatePartButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.searchCandidatePartsButton = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.candidatePartsSearchBox = new System.Windows.Forms.TextBox();
             this.allPartsDGV = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.associatedPartsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allPartsDGV)).BeginInit();
@@ -246,22 +246,22 @@ namespace Marshall_Banks_Inventory_System
             this.label9.TabIndex = 65;
             this.label9.Text = "All Candidate Parts";
             // 
-            // searchCandidatePartsButton
+            // searchButton
             // 
-            this.searchCandidatePartsButton.Location = new System.Drawing.Point(675, 72);
-            this.searchCandidatePartsButton.Name = "searchCandidatePartsButton";
-            this.searchCandidatePartsButton.Size = new System.Drawing.Size(59, 20);
-            this.searchCandidatePartsButton.TabIndex = 6;
-            this.searchCandidatePartsButton.Text = "Search";
-            this.searchCandidatePartsButton.UseVisualStyleBackColor = true;
-            this.searchCandidatePartsButton.Click += new System.EventHandler(this.searchCandidatePartsButton_Click);
+            this.searchButton.Location = new System.Drawing.Point(675, 72);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(59, 20);
+            this.searchButton.TabIndex = 6;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // textBox7
+            // candidatePartsSearchBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(740, 72);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(223, 20);
-            this.textBox7.TabIndex = 5;
+            this.candidatePartsSearchBox.Location = new System.Drawing.Point(740, 72);
+            this.candidatePartsSearchBox.Name = "candidatePartsSearchBox";
+            this.candidatePartsSearchBox.Size = new System.Drawing.Size(223, 20);
+            this.candidatePartsSearchBox.TabIndex = 5;
             // 
             // allPartsDGV
             // 
@@ -283,8 +283,8 @@ namespace Marshall_Banks_Inventory_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 582);
             this.Controls.Add(this.allPartsDGV);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.searchCandidatePartsButton);
+            this.Controls.Add(this.candidatePartsSearchBox);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.addCandidatePartButton);
@@ -338,8 +338,8 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.Button addCandidatePartButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button searchCandidatePartsButton;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox candidatePartsSearchBox;
         private System.Windows.Forms.DataGridView allPartsDGV;
     }
 }

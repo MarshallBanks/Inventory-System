@@ -30,7 +30,7 @@ namespace Marshall_Banks_Inventory_System
         private void InitializeComponent()
         {
             this.allPartsDGV = new System.Windows.Forms.DataGridView();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.candidatePartsSearchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,12 +70,12 @@ namespace Marshall_Banks_Inventory_System
             this.allPartsDGV.Size = new System.Drawing.Size(586, 147);
             this.allPartsDGV.TabIndex = 91;
             // 
-            // textBox7
+            // candidatePartsSearchBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(740, 74);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(223, 20);
-            this.textBox7.TabIndex = 9;
+            this.candidatePartsSearchBox.Location = new System.Drawing.Point(740, 74);
+            this.candidatePartsSearchBox.Name = "candidatePartsSearchBox";
+            this.candidatePartsSearchBox.Size = new System.Drawing.Size(223, 20);
+            this.candidatePartsSearchBox.TabIndex = 9;
             // 
             // searchButton
             // 
@@ -283,7 +283,7 @@ namespace Marshall_Banks_Inventory_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 582);
             this.Controls.Add(this.allPartsDGV);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.candidatePartsSearchBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -319,7 +319,7 @@ namespace Marshall_Banks_Inventory_System
         #endregion
 
         private System.Windows.Forms.DataGridView allPartsDGV;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox candidatePartsSearchBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
