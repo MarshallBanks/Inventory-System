@@ -12,12 +12,16 @@ namespace Marshall_Banks_Inventory_System
 {
     public partial class ModifyProductForm : Form
     {
+        // create reference to MainForm to access the selected Product.
+        private MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+
+        // Create a bindingList designated to only function as the associatedPartsDGV
+        // Datasource.
+        private BindingList<Part> tempAssociatedParts = new BindingList<Part>();
+
         public ModifyProductForm()
         {
             InitializeComponent();
-
-            // create reference to MainForm to access the selected Product.
-            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
 
             // Create a reference to the currently selected row in ProductsDGV 
             // in the main form
@@ -31,18 +35,16 @@ namespace Marshall_Banks_Inventory_System
             maxTextBox.Text = selectedProduct.Max.ToString();
             minTextBox.Text = selectedProduct.Min.ToString();
 
-            //
-            //BindingList
-
             // Populate All Candidate Parts list with data
             allPartsDGV.DataSource = Inventory.PartList;
-
-            // Create copy of the product's associated parts to manipulate when using 
-            // add button. Parts are actually updated using the Save button.
-            List<Part> associatedPartsCopy = selectedProduct.AssociatedParts.ToList();
-
+            
             // Populate associated parts list with data
-            associatedPartsDGV.DataSource = associatedPartsCopy;
+            associatedPartsDGV.DataSource = tempAssociatedParts;
+
+            foreach (Part part in selectedProduct.AssociatedParts)
+            {
+                tempAssociatedParts.Add(part);
+            }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -52,29 +54,17 @@ namespace Marshall_Banks_Inventory_System
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedPart = allPartsDGV.CurrentRow;
-
-            associatedPartsDGV.Rows.Add(selectedPart);
-
-            /*
             // Create reference to currently selected part in available parts DGV
             Part partToAdd = allPartsDGV.CurrentRow.DataBoundItem as Part;
 
-
-
-            // create reference to MainForm to access the selected Product.
-            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
-
-            // Create a reference to the currently selected row in ProductsDGV 
-            // in the main form
-            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
-
-            selectedProduct.AssociatedParts.Add(partToAdd);*/
+            tempAssociatedParts.Add(partToAdd);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
 
+            tempAssociatedParts.Remove(partToRemove);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -100,8 +90,7 @@ namespace Marshall_Banks_Inventory_System
             }
 
             // Get the current row index to pass to updateProduct
-            MainForm main = (MainForm)Application.OpenForms["MainForm"];
-            int productIndex = main.productsDGV.CurrentCell.RowIndex;
+            int productIndex = mainForm.productsDGV.CurrentCell.RowIndex;
 
             Inventory.updateProduct(productIndex, new Product(productID, name, priceCost, inventory, min, max));
 
@@ -110,8 +99,7 @@ namespace Marshall_Banks_Inventory_System
 
         private void ModifyProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainForm main = (MainForm)Application.OpenForms["MainForm"];
-            main.Show();
+            mainForm.Show();
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
