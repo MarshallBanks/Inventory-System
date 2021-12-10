@@ -81,6 +81,7 @@ namespace Marshall_Banks_Inventory_System
             int max = int.Parse(maxTextBox.Text);
             int min = int.Parse(minTextBox.Text);
 
+            // Validate that min can't be more than max
             if (min > max)
             {
                 maxTextBox.BackColor = Color.FromArgb(255, 128, 128);
@@ -89,10 +90,20 @@ namespace Marshall_Banks_Inventory_System
                 return;
             }
 
+            // Create modified product to replace the old Product in the Products List
+            Product modifiedProduct = new Product(productID, name, priceCost, inventory, min, max);
+
+            // Get any parts in the bottom DataGridView and add it to the modified product
+            foreach (Part part in tempAssociatedParts)
+            {
+                modifiedProduct.AssociatedParts.Add(part);
+            }
+
             // Get the current row index to pass to updateProduct
             int productIndex = mainForm.productsDGV.CurrentCell.RowIndex;
 
-            Inventory.updateProduct(productIndex, new Product(productID, name, priceCost, inventory, min, max));
+            // Pass the index and the modified Product
+            Inventory.updateProduct(productIndex, modifiedProduct);
 
             this.Close();
         }
