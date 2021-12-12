@@ -13,7 +13,7 @@ namespace Marshall_Banks_Inventory_System
     public partial class AddProductForm : Form
     {
         // create reference to MainForm to access the selected Product.
-        MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+        readonly MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
 
         // Create a bindingList designated for the associatedPartsDGV Datasource.
         private BindingList<Part> tempAssociatedParts = new BindingList<Part>();

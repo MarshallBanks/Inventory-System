@@ -45,7 +45,6 @@ namespace Marshall_Banks_Inventory_System
             this.productsSearchBox = new System.Windows.Forms.TextBox();
             this.searchProductsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.testButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.partsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsDGV)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +131,6 @@ namespace Marshall_Banks_Inventory_System
             this.partsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.partsDGV.Size = new System.Drawing.Size(586, 253);
             this.partsDGV.TabIndex = 14;
-            this.partsDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.partsDGV_CellClick);
             this.partsDGV.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.partsDGV_DataBindingComplete_1);
             // 
             // productsDGV
@@ -219,22 +217,11 @@ namespace Marshall_Banks_Inventory_System
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(73, 368);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 23;
-            this.testButton.Text = "testButton";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1256, 469);
-            this.Controls.Add(this.testButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.productsDGV);
             this.Controls.Add(this.deleteProductsButton);
@@ -277,7 +264,6 @@ namespace Marshall_Banks_Inventory_System
         private System.Windows.Forms.TextBox productsSearchBox;
         private System.Windows.Forms.Button searchProductsButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button testButton;
         public System.Windows.Forms.DataGridView partsDGV;
         public System.Windows.Forms.DataGridView productsDGV;
     }

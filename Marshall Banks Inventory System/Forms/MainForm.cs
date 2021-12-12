@@ -151,18 +151,6 @@ namespace Marshall_Banks_Inventory_System
             Application.Exit();
         }
 
-        // for testing and debugging during development
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            Product selectedProduct = productsDGV.CurrentRow.DataBoundItem as Product;
-            MessageBox.Show($"{selectedProduct.AssociatedParts.ElementAt(0).Name}");
-        }
-
-        private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //MessageBox.Show(partsDGV.CurrentRow.Cells["PartID"].Value + " was clicked");
-        }
-
         private void partsDGV_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
            partsDGV.Rows[0].Selected = false;
