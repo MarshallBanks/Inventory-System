@@ -170,10 +170,14 @@ namespace Marshall_Banks_Inventory_System
 
         private void productsDGV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            if (productsDGV.Rows[0].Selected == true)
+            try
             {
                 productsDGV.Rows[0].Selected = false;
-            }   
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                return;
+            } 
         }
 
         private void deleteProductsButton_Click(object sender, EventArgs e)
