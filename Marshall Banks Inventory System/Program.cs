@@ -26,8 +26,24 @@ namespace Marshall_Banks_Inventory_System
             Inventory.addProduct(new Product(2, "Tricycle", 5.66m, 20, 5, 25));
             Inventory.addProduct(new Product(3, "Scooter", 4.77m, 40, 10, 20));
 
+            // Preloaded parts for Bicycle
             Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(0));
+            Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(1));
+            Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(2));
+            Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(3));
+            Inventory.ProductList.ElementAt(0).AssociatedParts.Add(Inventory.PartList.ElementAt(4));
+
+            // Preloaded parts for Tricycle
+            Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(0));
             Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(1));
+            Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(2));
+            Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(3));
+            Inventory.ProductList.ElementAt(1).AssociatedParts.Add(Inventory.PartList.ElementAt(4));
+
+            // Preloaded parts for Scooter
+            Inventory.ProductList.ElementAt(2).AssociatedParts.Add(Inventory.PartList.ElementAt(4));
+            Inventory.ProductList.ElementAt(2).AssociatedParts.Add(Inventory.PartList.ElementAt(1));
+            Inventory.ProductList.ElementAt(2).AssociatedParts.Add(Inventory.PartList.ElementAt(3));
 
 
 

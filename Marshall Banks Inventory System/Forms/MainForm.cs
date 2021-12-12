@@ -47,14 +47,22 @@ namespace Marshall_Banks_Inventory_System
 
         private void ModifyProductsButton_Click(object sender, EventArgs e)
         {
-            if (!productsDGV.CurrentRow.Selected)
+            try
+            {
+                if (!productsDGV.CurrentRow.Selected)
+                {
+                    MessageBox.Show("Please select the product you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    this.Hide();
+                    new ModifyProductForm().Show();
+                }
+            }
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Please select the product you wish to modify", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                this.Hide();
-                new ModifyProductForm().Show();
             }
         }
 

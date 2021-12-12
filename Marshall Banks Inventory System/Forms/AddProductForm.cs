@@ -69,9 +69,16 @@ namespace Marshall_Banks_Inventory_System
 
         private void deletePartButton_Click(object sender, EventArgs e)
         {
-            Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
+            try
+            {
+                Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
 
-            tempAssociatedParts.Remove(partToRemove);
+                tempAssociatedParts.Remove(partToRemove);
+            }
+            catch
+            {
+                MessageBox.Show("Please select the associated part you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
