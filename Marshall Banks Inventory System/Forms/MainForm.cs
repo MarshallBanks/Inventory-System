@@ -60,7 +60,6 @@ namespace Marshall_Banks_Inventory_System
 
         private void deletePartButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (!partsDGV.CurrentRow.Selected)
@@ -76,7 +75,7 @@ namespace Marshall_Banks_Inventory_System
                     {
                         return;
                     }
-                    
+
                     Inventory.deletePart(selectedPart);
                 }
             }
@@ -131,7 +130,6 @@ namespace Marshall_Banks_Inventory_System
                 {
                     partsDGV.DataSource = TempSearchList;
                 }
-
             }
             if(!searchTxtFound)
             {
@@ -148,12 +146,8 @@ namespace Marshall_Banks_Inventory_System
         // for testing and debugging during development
         private void testButton_Click(object sender, EventArgs e)
         {
-
             Product selectedProduct = productsDGV.CurrentRow.DataBoundItem as Product;
             MessageBox.Show($"{selectedProduct.AssociatedParts.ElementAt(0).Name}");
-
-
-
         }
 
         private void partsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -186,6 +180,12 @@ namespace Marshall_Banks_Inventory_System
                     DialogResult answer = MessageBox.Show($"Are you sure you wish to delete {selectedProduct.Name} from the list?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (answer != DialogResult.Yes)
                     {
+                        return;
+                    }
+
+                    if(selectedProduct.AssociatedParts.Any())
+                    {
+                        MessageBox.Show($"Please use the modify button to remove any of {selectedProduct.Name}'s associated parts and try again.", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
 
