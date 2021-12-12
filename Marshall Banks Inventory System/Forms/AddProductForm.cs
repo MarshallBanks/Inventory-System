@@ -25,9 +25,6 @@ namespace Marshall_Banks_Inventory_System
             // Populate All Candidate Parts list with data
             allPartsDGV.DataSource = Inventory.PartList;
 
-            // Create a reference to the currently selected Product in the MainForm
-            Product selectedProduct = mainForm.productsDGV.CurrentRow.DataBoundItem as Product;
-
             // Bind temporary binding list to associated parts DGV
             associatedPartsDGV.DataSource = tempAssociatedParts;
         }

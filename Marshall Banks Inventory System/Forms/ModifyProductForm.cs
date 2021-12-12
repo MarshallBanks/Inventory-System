@@ -129,10 +129,13 @@ namespace Marshall_Banks_Inventory_System
             // Get the current row index to pass to updateProduct
             int productIndex = mainForm.productsDGV.CurrentCell.RowIndex;
 
+            MessageBox.Show($"{productIndex}");
+
             // Pass the index and the modified Product
             Inventory.updateProduct(productIndex, modifiedProduct);
 
             this.Close();
+        
         }
 
         private void ModifyProductForm_FormClosing(object sender, FormClosingEventArgs e)
