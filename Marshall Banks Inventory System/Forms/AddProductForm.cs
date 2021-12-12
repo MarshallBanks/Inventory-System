@@ -70,6 +70,12 @@ namespace Marshall_Banks_Inventory_System
             {
                 Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
 
+                DialogResult answer = MessageBox.Show($"Are you sure you wish to delete {partToRemove.Name} from the list?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (answer != DialogResult.Yes)
+                {
+                    return;
+                }
+
                 tempAssociatedParts.Remove(partToRemove);
             }
             catch

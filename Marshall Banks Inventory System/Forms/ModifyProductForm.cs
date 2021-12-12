@@ -86,8 +86,15 @@ namespace Marshall_Banks_Inventory_System
             {
                 Part partToRemove = associatedPartsDGV.CurrentRow.DataBoundItem as Part;
 
+                DialogResult answer = MessageBox.Show($"Are you sure you wish to delete {partToRemove.Name} from the list?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (answer != DialogResult.Yes)
+                {
+                    return;
+                }
+
                 tempAssociatedParts.Remove(partToRemove);
             }
+            
             catch (NullReferenceException)
             {
                 MessageBox.Show("Please select the associated part you wish to delete", "Nothing Selected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -128,8 +135,6 @@ namespace Marshall_Banks_Inventory_System
 
             // Get the current row index to pass to updateProduct
             int productIndex = mainForm.productsDGV.CurrentCell.RowIndex;
-
-            MessageBox.Show($"{productIndex}");
 
             // Pass the index and the modified Product
             Inventory.updateProduct(productIndex, modifiedProduct);
