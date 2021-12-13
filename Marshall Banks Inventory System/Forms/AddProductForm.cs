@@ -160,8 +160,7 @@ namespace Marshall_Banks_Inventory_System
 
             if ((textBox.Name == "priceTextBox") && !textBox.Text.All(char.IsDigit))
             {
-                bool isDecimal = decimal.TryParse(textBox.Name, out decimal result);
-                if (isDecimal)
+                if (!decimal.TryParse(textBox.Text, out decimal d))
                 {
                     textBox.BackColor = Color.FromArgb(255, 128, 128);
                 }
